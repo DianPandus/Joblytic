@@ -116,6 +116,13 @@ def test_hs256_wrong_secret_rejected(client):
     assert client.get("/me", headers=bearer(forged)).status_code == 401
 
 
+def test_missing_supabase_url_is_clear_error(client):
+    app.dependency_overrides[get_settings] = lambda: Settings(supabase_url="")
+    resp = client.get("/me", headers=bearer(make_token(alg="ES256")))
+    assert resp.status_code == 503
+    assert "SUPABASE_URL" in resp.json()["detail"]
+
+
 def test_inactive_account_forbidden(client):
     client.state["profile"] = profile(is_active=False)
     assert client.get("/me", headers=bearer(make_token())).status_code == 403

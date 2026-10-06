@@ -27,6 +27,19 @@ def _jwks_client(url: str) -> jwt.PyJWKClient:
     return jwt.PyJWKClient(url, cache_keys=True, lifespan=600)
 
 
+def _signing_key(token: str, settings: Settings):
+    if not settings.supabase_url:
+        raise HTTPException(
+            status.HTTP_503_SERVICE_UNAVAILABLE, "Server belum dikonfigurasi: SUPABASE_URL kosong"
+        )
+    try:
+        return _jwks_client(settings.jwks_url).get_signing_key_from_jwt(token).key
+    except jwt.PyJWKClientConnectionError as exc:
+        raise HTTPException(
+            status.HTTP_503_SERVICE_UNAVAILABLE, "Gagal mengambil kunci verifikasi dari Supabase"
+        ) from exc
+
+
 def decode_token(token: str, settings: Settings) -> dict:
     try:
         header = jwt.get_unverified_header(token)
@@ -37,7 +50,7 @@ def decode_token(token: str, settings: Settings) -> dict:
             key = settings.supabase_jwt_secret
             algorithms = ["HS256"]
         elif alg in ASYMMETRIC_ALGS:
-            key = _jwks_client(settings.jwks_url).get_signing_key_from_jwt(token).key
+            key = _signing_key(token, settings)
             algorithms = [alg]
         else:
             raise jwt.InvalidTokenError(f"unsupported alg: {alg}")

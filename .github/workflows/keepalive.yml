@@ -1,0 +1,23 @@
+name: Keep-alive
+
+# Supabase free tier dijeda setelah seminggu tanpa aktivitas. Ping berkala lewat
+# /health?deep=true membangunkan backend Render sekaligus menyentuh database.
+# Set repository variable BACKEND_URL (mis. https://joblytic-api.onrender.com).
+
+on:
+  schedule:
+    - cron: "0 1 */2 * *" # setiap 2 hari, 08:00 WIB
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    if: vars.BACKEND_URL != ''
+    steps:
+      - name: Ping backend dan database
+        run: |
+          for i in 1 2 3 4 5 6; do
+            body=$(curl -fsS --max-time 90 "${{ vars.BACKEND_URL }}/health?deep=true") && echo "$body" && break
+            echo "Percobaan $i gagal, tunggu backend bangun..." && sleep 20
+          done
+          echo "$body" | grep -q '"database":"ok"'

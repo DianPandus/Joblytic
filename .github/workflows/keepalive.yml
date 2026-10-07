@@ -1,8 +1,8 @@
 name: Keep-alive
 
 # Supabase free tier dijeda setelah seminggu tanpa aktivitas. Ping berkala lewat
-# /health?deep=true membangunkan backend Render sekaligus menyentuh database.
-# Set repository variable BACKEND_URL (mis. https://joblytic-api.onrender.com).
+# /health?deep=true membangunkan backend Railway sekaligus menyentuh database.
+# Set repository variable BACKEND_URL (mis. https://joblytic-api.up.railway.app).
 
 on:
   schedule:

@@ -2,16 +2,15 @@
 
 Asisten lamaran kerja: menilai kecocokan CV dengan lowongan, menunjukkan gap skill, menyarankan perbaikan CV yang tetap bersumber dari profil pengguna, dan melacak status setiap lamaran. Spesifikasi lengkap ada di [`PRD Joblytic.md`](./PRD%20Joblytic.md).
 
-**Status:** Fase 0, kerangka web & deploy.
+**Status:** Fase 0 selesai (live di <https://joblytic-eta.vercel.app>). Berikutnya Fase 1, fondasi.
 
 ## Struktur
 
 ```
 frontend/              Next.js 16 (App Router) + Tailwind + Supabase Auth  → Vercel
-backend/               FastAPI + verifikasi JWT Supabase                    → Render (free)
+backend/               FastAPI + verifikasi JWT Supabase                    → Railway
 supabase/migrations/   Skema Postgres + row-level security                  → Supabase (free)
 .github/workflows/     CI (lint, test, build) dan keep-alive terjadwal
-render.yaml            Blueprint deploy backend di Render
 ```
 
 Alur autentikasi: frontend login lewat Supabase Auth → access token (JWT) dikirim ke backend sebagai `Authorization: Bearer` → backend memverifikasi tanda tangan JWT (JWKS asimetris, atau legacy HS256), lalu membaca database memakai token pengguna yang sama sehingga RLS tetap berlaku. Peran admin diperiksa di backend (`require_admin`), bukan hanya di tampilan.
@@ -49,27 +48,32 @@ npm run dev                     # http://localhost:3000
    update public.profiles set role = 'admin' where email = 'email-kamu@contoh.com';
    ```
 
-### 2. Backend di Render
-1. Push repo ke GitHub.
-2. Render → **New → Blueprint** → pilih repo (membaca `render.yaml`).
-3. Isi env: `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `CORS_ORIGINS=https://<app>.vercel.app,http://localhost:3000`. `SUPABASE_JWT_SECRET` hanya untuk proyek lama yang masih HS256.
-4. Cek `https://<api>.onrender.com/health?deep=true` → `{"status":"ok","database":"ok"}`.
+### 2. Backend di Railway
+1. Railway → **New Project → Deploy from GitHub repo** → pilih repo ini.
+2. Service → **Settings** (build pertama akan gagal sebelum Root Directory diisi; isi lalu redeploy):
+   - Root Directory: `backend`
+   - Custom Start Command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+   - Healthcheck Path: `/health`
+   - Serverless (App Sleeping): **ON**, agar kredit gratis cukup
+3. **Variables**: `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `CORS_ORIGINS=https://<app>.vercel.app,http://localhost:3000`. `SUPABASE_JWT_SECRET` hanya untuk proyek lama yang masih HS256. Perubahan variable baru berlaku setelah klik **Deploy** di banner "Apply changes".
+4. **Settings → Networking → Generate Domain**, lalu cek `https://<api>.up.railway.app/health?deep=true` → `{"status":"ok","database":"ok"}`. Selain `ok`, field `database` menyebut penyebabnya (`not_configured`, `http_401`, `unreachable (...)`).
 
 ### 3. Frontend di Vercel
 1. Vercel → **Add New Project** → repo ini, **Root Directory = `frontend`**.
-2. Env: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `NEXT_PUBLIC_API_URL=https://<api>.onrender.com`.
-3. Deploy, lalu perbarui Site URL/Redirect URL di Supabase dan `CORS_ORIGINS` di Render bila URL berubah.
+2. Env: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `NEXT_PUBLIC_API_URL=https://<api>.up.railway.app` (wajib diawali `https://`; tanpa itu request jadi path relatif dan berakhir 404 di Vercel).
+3. Variable `NEXT_PUBLIC_*` ditanam saat build, jadi setiap mengubahnya harus **Redeploy**.
+4. Perbarui Site URL/Redirect URL di Supabase dan `CORS_ORIGINS` di Railway bila URL berubah.
 
 ### 4. GitHub
-- Settings → Secrets and variables → Actions → **Variables**: `BACKEND_URL=https://<api>.onrender.com` untuk workflow keep-alive.
+- Settings → Secrets and variables → Actions → **Variables**: `BACKEND_URL=https://<api>.up.railway.app` untuk workflow keep-alive.
 
 ## Syarat selesai Fase 0
 
 - [x] Repo frontend & backend, migrasi database dengan RLS, CI
-- [ ] Supabase, Render, dan Vercel terhubung
-- [ ] Pengguna bisa daftar dan login di URL publik, profil tersimpan di tabel `profiles`, dan kartu "Server API" di dashboard menunjukkan *Terhubung*
+- [x] Supabase, Railway, dan Vercel terhubung
+- [x] Pengguna bisa daftar dan login di URL publik, profil tersimpan di tabel `profiles`, dan kartu "Server API" di dashboard menunjukkan *Terhubung*
 
 ## Catatan free tier
 
-- Backend Render tidur setelah 15 menit tanpa trafik dan butuh ~1 menit untuk bangun; dashboard menampilkan status "Menghubungkan ke server…".
+- Railway: trial $5 selama 30 hari tanpa kartu, lalu Free plan dengan kredit $1/bulan dan RAM 0,5 GB. Mode serverless menidurkan backend saat sepi; dashboard menampilkan status "Menghubungkan ke server…" selama backend bangun. RAM 0,5 GB perlu dievaluasi ulang sebelum Fase 3 (model embedding).
 - Supabase dijeda setelah seminggu tidak aktif; workflow `keepalive.yml` mem-ping `/health?deep=true` setiap 2 hari.

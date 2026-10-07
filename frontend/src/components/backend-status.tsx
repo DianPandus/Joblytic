@@ -8,7 +8,7 @@ type State =
   | { kind: "ok"; role: string }
   | { kind: "error"; message: string };
 
-// Backend free tier di Render tidur setelah 15 menit dan butuh ~1 menit untuk bangun,
+// Backend free tier di Railway (serverless) tidur saat sepi dan butuh waktu untuk bangun,
 // jadi tampilkan status menghubungkan yang jelas alih-alih terlihat rusak.
 export function BackendStatus() {
   const [state, setState] = useState<State>({ kind: "connecting", slow: false });

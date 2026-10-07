@@ -167,12 +167,12 @@ Pengguna dan admin membuka frontend yang sama; backend memeriksa token dan peran
 
 | Lapisan | Pilihan | Catatan |
 | --- | --- | --- |
-| Backend | FastAPI | Endpoint analisis, profil, tracker, dan admin; berjalan di Render (free web service) |
+| Backend | FastAPI | Endpoint analisis, profil, tracker, dan admin; berjalan di Railway (trial lalu Free plan) |
 | Validasi data | Pydantic v2 | Skema ekstraksi dan retry bila output rusak |
 | Database | Supabase Postgres (free tier) | Mendukung banyak pengguna dengan isolasi data per pengguna; SQLite tidak dipakai karena disk di free hosting tidak permanen. Free tier: 500 MB, dijeda setelah seminggu tidak aktif, tanpa backup otomatis |
 | Autentikasi | Supabase Auth (email, login Google opsional) | Backend memverifikasi token (JWT) dan peran admin; free tier mencakup 50.000 pengguna aktif bulanan |
 | File storage | Supabase Storage | Menyimpan CV asli per pengguna dengan kontrol akses; free tier 1 GB dan maksimal 50 MB per file |
-| Hosting | Vercel (frontend) dan Render free web service (backend) | Backend tidur setelah 15 menit tanpa lalu lintas dan butuh sekitar satu menit untuk bangun; database tetap di Supabase karena Postgres gratis Render kedaluwarsa 30 hari; Render menyebut free instance untuk hobi dan uji coba, bukan produksi |
+| Hosting | Vercel (frontend) dan Railway (backend) | Awalnya Render, tetapi pembuatan service di Render menolak kartu pembayaran, jadi backend pindah ke Railway (Oktober 2026). Railway: trial $5 selama 30 hari tanpa kartu, lalu Free plan dengan kredit $1/bulan dan RAM 0,5 GB; mode serverless menidurkan backend saat sepi agar kredit cukup. RAM 0,5 GB kemungkinan tidak cukup untuk model embedding di Fase 3, jadi evaluasi ulang saat itu (alternatif: Hugging Face Spaces atau embedding API) |
 | Embedding | paraphrase-multilingual-MiniLM-L12-v2 | Mendukung bahasa Indonesia; model berjalan di backend dan memakan memori, jadi cek dulu muat tidaknya di free tier (alternatif: embedding API gratis); tanpa vector store karena jumlah skill kecil |
 | LLM | Gemini API free tier (model Flash) | Lewat lapisan adapter agar penyedia mudah diganti; kuota gratis dipakai bersama semua pengguna. Free tier Gemini boleh memakai masukan untuk memperbaiki produk Google, jadi identitas di CV dihapus sebelum dikirim (lihat risiko) |
 | Frontend | Next.js (React) + Tailwind di Vercel (free) | Web app terpisah dari backend, termasuk halaman admin; pilihan framework final ada di open questions |
@@ -180,7 +180,7 @@ Pengguna dan admin membuka frontend yang sama; backend memeriksa token dan peran
 
 **Entitas data inti:** entri profil, lowongan (hasil ekstraksi), analisis (skor, rincian, versi prompt dan model), lamaran, riwayat tahap, serta pengguna (akun dan peran), berkas CV, dan log pemakaian untuk panel admin; setiap tabel punya kolom pemilik (user\_id) agar data tiap pengguna terisolasi.
 
-**Sumber** (dibuka Oktober 2026; batas free tier bisa berubah, cek ulang sebelum dipakai): [Supabase Pricing](https://supabase.com/pricing), [Gemini API Additional Terms of Service](https://ai.google.dev/gemini-api/terms), [Render: Deploy for Free](https://render.com/docs/free).
+**Sumber** (dibuka Oktober 2026; batas free tier bisa berubah, cek ulang sebelum dipakai): [Supabase Pricing](https://supabase.com/pricing), [Gemini API Additional Terms of Service](https://ai.google.dev/gemini-api/terms), [Railway Pricing Plans](https://docs.railway.com/reference/pricing/plans).
 
 ## 10. Success Metrics
 
@@ -213,7 +213,7 @@ Pengerjaan dibagi tujuh fase, dimulai dari kerangka web yang sudah live (login, 
 
 | Fase | Output | Syarat selesai | Estimasi |
 | --- | --- | --- | --- |
-| Fase 0: Kerangka web & deploy | Repo frontend dan backend, login dan database terhubung (Supabase), deploy ke Vercel dan Render, CI sederhana, commit pertama | Pengguna bisa daftar dan login di URL publik, dan data tersimpan di database cloud | 1-2 minggu |
+| Fase 0: Kerangka web & deploy | Repo frontend dan backend, login dan database terhubung (Supabase), deploy ke Vercel dan Railway, CI sederhana, commit pertama | Pengguna bisa daftar dan login di URL publik, dan data tersimpan di database cloud | 1-2 minggu |
 | Fase 1: Fondasi | Skema data (profil, lowongan, lamaran), unggah dan ekstraksi CV ke profil (field kosong dibiarkan), form koreksi profil, tracker dasar, repo dengan commit dan CI sederhana | Profil terisi dari CV yang diunggah dan lamaran bisa dicatat beserta tahapnya lewat antarmuka | 1-2 minggu |
 | Fase 2: Ekstraksi lowongan | Pipeline LLM ke skema Pydantic, retry, koreksi manual, set evaluasi 30 lowongan berlabel | Akurasi ekstraksi terukur dan tercatat | 1-2 minggu |
 | Fase 3: Pencocokan & gap | Mesin skor deterministik, embedding untuk kecocokan semantik, rincian skor, daftar gap | Skor konsisten dan korelasi peringkat terukur | 1-2 minggu |

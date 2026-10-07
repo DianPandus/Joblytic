@@ -1,75 +1,13 @@
 import time
-from types import SimpleNamespace
 
 import httpx
 import jwt
 import pytest
-from cryptography.hazmat.primitives.asymmetric import ec
-from fastapi.testclient import TestClient
 
 from app import auth
 from app.config import Settings, get_settings
 from app.main import app
-
-SUPABASE_URL = "https://example.supabase.co"
-JWT_SECRET = "test-secret-at-least-32-characters-long!!"
-USER_ID = "11111111-1111-1111-1111-111111111111"
-
-EC_KEY = ec.generate_private_key(ec.SECP256R1())
-
-
-def make_token(*, alg="HS256", sub=USER_ID, exp_offset=3600, aud="authenticated", iss=None):
-    claims = {
-        "sub": sub,
-        "email": "dian@example.com",
-        "aud": aud,
-        "iss": iss or f"{SUPABASE_URL}/auth/v1",
-        "exp": int(time.time()) + exp_offset,
-        "role": "authenticated",
-    }
-    key = JWT_SECRET if alg == "HS256" else EC_KEY
-    return jwt.encode(claims, key, algorithm=alg, headers={"kid": "test"})
-
-
-def profile(role="user", is_active=True):
-    return {
-        "id": USER_ID,
-        "email": "dian@example.com",
-        "full_name": "Dian",
-        "role": role,
-        "is_active": is_active,
-    }
-
-
-@pytest.fixture
-def client(monkeypatch):
-    settings = Settings(
-        supabase_url=SUPABASE_URL,
-        supabase_publishable_key="pk",
-        supabase_jwt_secret=JWT_SECRET,
-    )
-    app.dependency_overrides[get_settings] = lambda: settings
-
-    fake_jwks = SimpleNamespace(
-        get_signing_key_from_jwt=lambda token: SimpleNamespace(key=EC_KEY.public_key())
-    )
-    monkeypatch.setattr(auth, "_jwks_client", lambda url: fake_jwks)
-
-    state = {"profile": profile()}
-
-    async def fake_fetch(user, settings):
-        return state["profile"]
-
-    monkeypatch.setattr(auth, "fetch_own_profile", fake_fetch)
-
-    with TestClient(app) as c:
-        c.state = state
-        yield c
-    app.dependency_overrides.clear()
-
-
-def bearer(token):
-    return {"Authorization": f"Bearer {token}"}
+from tests.helpers import SUPABASE_URL, USER_ID, bearer, make_token, profile
 
 
 def test_health(client):

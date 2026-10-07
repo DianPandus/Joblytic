@@ -11,6 +11,7 @@ async function signOut() {
 
 const NAV = [
   { href: "/dashboard", label: "Dashboard" },
+  { href: "/profile", label: "Profil" },
   { href: "/applications", label: "Tracker" },
 ] as const;
 

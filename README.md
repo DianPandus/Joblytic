@@ -2,7 +2,9 @@
 
 Asisten lamaran kerja: menilai kecocokan CV dengan lowongan, menunjukkan gap skill, menyarankan perbaikan CV yang tetap bersumber dari profil pengguna, dan melacak status setiap lamaran. Spesifikasi lengkap ada di [`PRD Joblytic.md`](./PRD%20Joblytic.md).
 
-**Status:** Fase 0 selesai (live di <https://joblytic-eta.vercel.app>). Fase 1 berjalan: tracker lamaran sudah ada; unggah dan ekstraksi CV menyusul.
+**Status:** Fase 0 selesai (live di <https://joblytic-eta.vercel.app>). Fase 1: tracker lamaran, serta unggah CV (PDF/DOCX berbasis teks) yang diekstrak ke profil terstruktur lalu bisa dikoreksi dan diekspor ke Markdown.
+
+Ekstraksi CV: teks dibaca dari berkas → nama, kontak, tautan, dan alamat disensor → Gemini mengisi skema Pydantic (diulang sekali dengan prompt lebih ketat bila gagal) → entri dan butir yang tidak bisa ditemukan di teks CV dibuang sebelum disimpan. Versi model dan prompt dicatat di tabel `cv_uploads`.
 
 ## Struktur
 
@@ -25,7 +27,7 @@ cd backend
 python -m venv .venv
 .venv/Scripts/activate          # Linux/macOS: source .venv/bin/activate
 pip install -r requirements-dev.txt
-cp .env.example .env            # isi SUPABASE_URL & SUPABASE_PUBLISHABLE_KEY
+cp .env.example .env            # isi SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, GEMINI_API_KEY
 uvicorn app.main:app --reload   # http://localhost:8000/docs
 pytest
 
@@ -55,7 +57,7 @@ npm run dev                     # http://localhost:3000
    - Custom Start Command: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
    - Healthcheck Path: `/health`
    - Serverless (App Sleeping): **ON**, agar kredit gratis cukup
-3. **Variables**: `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `CORS_ORIGINS=https://<app>.vercel.app,http://localhost:3000`. `SUPABASE_JWT_SECRET` hanya untuk proyek lama yang masih HS256. Perubahan variable baru berlaku setelah klik **Deploy** di banner "Apply changes".
+3. **Variables**: `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `GEMINI_API_KEY` (dari <https://aistudio.google.com/apikey>), `CORS_ORIGINS=https://<app>.vercel.app,http://localhost:3000`. Opsional: `GEMINI_MODEL` (default `gemini-3.5-flash-lite`). `SUPABASE_JWT_SECRET` hanya untuk proyek lama yang masih HS256. Perubahan variable baru berlaku setelah klik **Deploy** di banner "Apply changes".
 4. **Settings → Networking → Generate Domain**, lalu cek `https://<api>.up.railway.app/health?deep=true` → `{"status":"ok","database":"ok"}`. Selain `ok`, field `database` menyebut penyebabnya (`not_configured`, `http_401`, `unreachable (...)`).
 
 ### 3. Frontend di Vercel

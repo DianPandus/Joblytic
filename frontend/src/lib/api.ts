@@ -19,7 +19,10 @@ export async function apiFetch<T>(path: string, init: RequestInit = {}): Promise
 
   const headers = new Headers(init.headers);
   if (session) headers.set("Authorization", `Bearer ${session.access_token}`);
-  if (init.body && !headers.has("Content-Type")) headers.set("Content-Type", "application/json");
+  // FormData butuh boundary multipart yang diisi browser sendiri, jadi jangan ditimpa.
+  if (typeof init.body === "string" && !headers.has("Content-Type")) {
+    headers.set("Content-Type", "application/json");
+  }
 
   const res = await fetch(`${API_URL}${path}`, { ...init, headers });
   if (!res.ok) {

@@ -21,7 +21,7 @@ async def health(deep: bool = False, settings: Settings = Depends(get_settings))
     """Health check ringan; `?deep=true` juga menyentuh database Supabase."""
     result: dict = {"status": "ok"}
     if deep:
-        result["database"] = "ok" if await ping_database(settings) else "unreachable"
+        result["database"] = await ping_database(settings)
     return result
 
 

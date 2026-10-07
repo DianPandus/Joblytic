@@ -29,11 +29,14 @@ async def fetch_own_profile(user: "CurrentUser", settings: Settings) -> dict | N
     return rows[0] if rows else None
 
 
-async def ping_database(settings: Settings) -> bool:
+async def ping_database(settings: Settings) -> str:
+    """Mengembalikan "ok" atau alasan singkat kegagalan (tanpa membocorkan kunci)."""
+    if not settings.supabase_url or not settings.supabase_publishable_key:
+        return "not_configured"
     headers = {"apikey": settings.supabase_publishable_key}
     try:
         async with httpx.AsyncClient(timeout=TIMEOUT) as client:
             resp = await client.post(_rest_url(settings, "rpc/ping"), headers=headers, json={})
-        return resp.status_code == 200
-    except httpx.HTTPError:
-        return False
+    except httpx.HTTPError as exc:
+        return f"unreachable ({type(exc).__name__})"
+    return "ok" if resp.status_code == 200 else f"http_{resp.status_code}"

@@ -1,6 +1,7 @@
 import time
 from types import SimpleNamespace
 
+import httpx
 import jwt
 import pytest
 from cryptography.hazmat.primitives.asymmetric import ec
@@ -121,6 +122,23 @@ def test_missing_supabase_url_is_clear_error(client):
     resp = client.get("/me", headers=bearer(make_token(alg="ES256")))
     assert resp.status_code == 503
     assert "SUPABASE_URL" in resp.json()["detail"]
+
+
+def test_supabase_error_on_profile_is_clear_503(client, monkeypatch):
+    async def failing_fetch(user, settings):
+        request = httpx.Request("GET", f"{SUPABASE_URL}/rest/v1/profiles")
+        response = httpx.Response(401, request=request)
+        raise httpx.HTTPStatusError("unauthorized", request=request, response=response)
+
+    monkeypatch.setattr(auth, "fetch_own_profile", failing_fetch)
+    resp = client.get("/me", headers=bearer(make_token()))
+    assert resp.status_code == 503
+    assert "HTTP 401" in resp.json()["detail"]
+
+
+def test_deep_health_reports_missing_config(client):
+    app.dependency_overrides[get_settings] = lambda: Settings(supabase_url="")
+    assert client.get("/health?deep=true").json()["database"] == "not_configured"
 
 
 def test_inactive_account_forbidden(client):

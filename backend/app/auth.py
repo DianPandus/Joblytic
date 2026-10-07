@@ -3,6 +3,7 @@
 from dataclasses import dataclass
 from functools import lru_cache
 
+import httpx
 import jwt
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
@@ -89,7 +90,17 @@ async def get_current_profile(
     user: CurrentUser = Depends(get_current_user),
     settings: Settings = Depends(get_settings),
 ) -> dict:
-    profile = await fetch_own_profile(user, settings)
+    try:
+        profile = await fetch_own_profile(user, settings)
+    except httpx.HTTPStatusError as exc:
+        raise HTTPException(
+            status.HTTP_503_SERVICE_UNAVAILABLE,
+            f"Gagal membaca profil dari Supabase (HTTP {exc.response.status_code})",
+        ) from exc
+    except httpx.HTTPError as exc:
+        raise HTTPException(
+            status.HTTP_503_SERVICE_UNAVAILABLE, "Tidak bisa menghubungi Supabase"
+        ) from exc
     if profile is None:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Profil akun tidak ditemukan")
     if not profile.get("is_active", True):

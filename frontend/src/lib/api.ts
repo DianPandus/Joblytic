@@ -23,7 +23,8 @@ export async function apiFetch<T>(path: string, init: RequestInit = {}): Promise
 
   const res = await fetch(`${API_URL}${path}`, { ...init, headers });
   if (!res.ok) {
-    let detail = res.statusText;
+    // statusText selalu kosong di HTTP/2, jadi kode status dipakai sebagai cadangan.
+    let detail = res.statusText || `HTTP ${res.status}`;
     try {
       detail = (await res.json()).detail ?? detail;
     } catch {}

@@ -2,7 +2,7 @@
 
 Asisten lamaran kerja: menilai kecocokan CV dengan lowongan, menunjukkan gap skill, menyarankan perbaikan CV yang tetap bersumber dari profil pengguna, dan melacak status setiap lamaran. Spesifikasi lengkap ada di [`PRD Joblytic.md`](./PRD%20Joblytic.md).
 
-**Status:** Fase 0 selesai (live di <https://joblytic-eta.vercel.app>). Berikutnya Fase 1, fondasi.
+**Status:** Fase 0 selesai (live di <https://joblytic-eta.vercel.app>). Fase 1 berjalan: tracker lamaran sudah ada; unggah dan ekstraksi CV menyusul.
 
 ## Struktur
 
@@ -40,7 +40,7 @@ npm run dev                     # http://localhost:3000
 
 ### 1. Supabase
 1. Buat proyek di <https://supabase.com/dashboard> (region Singapore).
-2. **SQL Editor** → jalankan isi `supabase/migrations/20261006000000_init_profiles.sql`.
+2. **SQL Editor** → jalankan isi setiap file di `supabase/migrations/` berurutan sesuai nama file (aman dijalankan ulang).
 3. **Project Settings → API Keys**: catat Project URL dan *publishable key*.
 4. **Authentication → URL Configuration**: Site URL = URL Vercel, tambahkan Redirect URL `http://localhost:3000/auth/confirm` dan `https://<app>.vercel.app/auth/confirm`.
 5. Jadikan akun sendiri admin (setelah mendaftar):

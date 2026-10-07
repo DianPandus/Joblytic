@@ -1,15 +1,9 @@
 import { redirect } from "next/navigation";
+import { AppHeader } from "@/components/app-header";
 import { BackendStatus } from "@/components/backend-status";
 import { createClient } from "@/lib/supabase/server";
 
 export const metadata = { title: "Dashboard · Joblytic" };
-
-async function signOut() {
-  "use server";
-  const supabase = await createClient();
-  await supabase.auth.signOut();
-  redirect("/login");
-}
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -26,21 +20,14 @@ export default async function DashboardPage() {
 
   return (
     <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-8 px-4 py-10">
-      <header className="flex items-center justify-between gap-4">
-        <span className="font-mono text-sm text-accent">Joblytic</span>
-        <form action={signOut}>
-          <button className="rounded-md border border-border px-3 py-1.5 text-sm hover:bg-card">
-            Keluar
-          </button>
-        </form>
-      </header>
+      <AppHeader active="/dashboard" />
 
       <section>
         <h1 className="text-2xl font-semibold">
           Halo, {profile?.full_name || profile?.email || claims.email}
         </h1>
         <p className="mt-1 text-muted">
-          Fitur profil, analisis lowongan, dan tracker lamaran akan muncul di sini.
+          Catat lamaranmu di Tracker. Profil dan analisis lowongan menyusul.
         </p>
       </section>
 

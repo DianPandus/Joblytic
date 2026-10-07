@@ -2,7 +2,7 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { SUPABASE_KEY, SUPABASE_URL } from "./env";
 
-const PROTECTED_PREFIXES = ["/dashboard", "/admin"];
+const PROTECTED_PREFIXES = ["/dashboard", "/applications", "/admin"];
 const AUTH_PAGES = ["/login", "/signup"];
 
 // Me-refresh token sesi Supabase di setiap permintaan dan melakukan redirect

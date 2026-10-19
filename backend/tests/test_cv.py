@@ -16,7 +16,7 @@ from app.cv import (
     redact,
 )
 from app.llm import LLMError, LLMQuotaError
-from tests.helpers import bearer, make_token
+from tests.helpers import FakeLLM, bearer, make_token
 
 CV_TEXT = """Budi Santoso
 budi@example.com | +62 812-3456-7890 | linkedin.com/in/budi
@@ -117,21 +117,6 @@ def test_ground_rejects_invalid_or_reversed_dates():
 
 
 # --- Retry LLM ----------------------------------------------------------------
-
-
-class FakeLLM:
-    model = "fake-model"
-
-    def __init__(self, responses):
-        self.responses = list(responses)
-        self.systems = []
-
-    async def generate_json(self, system, prompt, schema):
-        self.systems.append(system)
-        response = self.responses.pop(0)
-        if isinstance(response, Exception):
-            raise response
-        return response
 
 
 @pytest.mark.anyio

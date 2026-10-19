@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     gemini_model: str = "gemini-3.5-flash-lite"
     # Kuota LLM gratis dipakai bersama semua pengguna (PRD 7.10).
     cv_uploads_per_day: int = 5
+    job_extractions_per_day: int = 20
 
     @property
     def cors_origin_list(self) -> list[str]:

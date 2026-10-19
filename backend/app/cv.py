@@ -12,6 +12,7 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
+from app.grounding import clean, supported, words
 from app.llm import LLMClient, LLMError
 
 PROMPT_VERSION = "cv-extract-v1"
@@ -164,19 +165,6 @@ def redact(text: str, full_name: str | None) -> str:
 
 # --- Grounding: entri harus bisa ditemukan di teks CV ---------------------------
 
-WORD_RE = re.compile(r"[a-z0-9+#]+")
-
-
-def _words(text: str) -> list[str]:
-    return [w for w in WORD_RE.findall(text.lower()) if len(w) >= 2 or w in {"c", "r"}]
-
-
-def _supported(fragment: str, source_words: set[str], threshold: float = 0.7) -> bool:
-    words = _words(fragment)
-    if not words:
-        return False
-    return sum(w in source_words for w in words) / len(words) >= threshold
-
 
 def _month(value: str | None) -> str | None:
     if not value:
@@ -187,11 +175,6 @@ def _month(value: str | None) -> str | None:
     return f"{m.group(1)}-{m.group(2)}-01"
 
 
-def _clean(value: str | None, limit: int) -> str | None:
-    value = (value or "").strip()
-    return value[:limit] or None
-
-
 @dataclass
 class ExtractionResult:
     entries: list[dict]
@@ -200,26 +183,26 @@ class ExtractionResult:
 
 
 def ground(extraction: CVExtraction, source_text: str) -> ExtractionResult:
-    source_words = set(_words(source_text))
+    source_words = set(words(source_text))
     entries: list[dict] = []
     dropped_entries = dropped_bullets = 0
 
     for e in extraction.entries:
-        title = _clean(e.title, 300)
-        if not title or not _supported(title, source_words):
+        title = clean(e.title, 300)
+        if not title or not supported(title, source_words):
             dropped_entries += 1
             continue
         bullets = []
         for b in e.bullets:
-            b = _clean(b, 1000)
-            if b and _supported(b, source_words):
+            b = clean(b, 1000)
+            if b and supported(b, source_words):
                 bullets.append(b)
             elif b:
                 dropped_bullets += 1
 
         def keep(value: str | None, limit: int) -> str | None:
-            value = _clean(value, limit)
-            return value if value and _supported(value, source_words) else None
+            value = clean(value, limit)
+            return value if value and supported(value, source_words) else None
 
         start, end = _month(e.start_month), _month(e.end_month)
         if start and end and end < start:

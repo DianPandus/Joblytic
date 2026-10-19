@@ -4,6 +4,8 @@ Asisten lamaran kerja: menilai kecocokan CV dengan lowongan, menunjukkan gap ski
 
 **Status:** Fase 0 selesai (live di <https://joblytic-eta.vercel.app>). Fase 1: tracker lamaran, serta unggah CV (PDF/DOCX berbasis teks) yang diekstrak ke profil terstruktur lalu bisa dikoreksi dan diekspor ke Markdown.
 
+**Fase 2 (berjalan):** halaman Lowongan. Teks lowongan yang ditempel diekstrak Gemini menjadi posisi, perusahaan, lokasi, skill wajib dan nilai tambah, syarat pendidikan dan pengalaman, serta tanggung jawab; hasilnya bisa dikoreksi lalu disimpan sebagai lamaran di tracker. Isian yang tidak ditemukan di teks lowongan dibuang, lowongan yang sama tidak diekstrak ulang (cache per pengguna), dan setiap panggilan LLM dicatat di tabel `llm_usage` untuk batas harian. Akurasi diukur dengan set evaluasi di [`backend/evals/jobs/`](./backend/evals/jobs/README.md).
+
 Ekstraksi CV: teks dibaca dari berkas → nama, kontak, tautan, dan alamat disensor → Gemini mengisi skema Pydantic (diulang sekali dengan prompt lebih ketat bila gagal) → entri dan butir yang tidak bisa ditemukan di teks CV dibuang sebelum disimpan. Versi model dan prompt dicatat di tabel `cv_uploads`.
 
 ## Struktur
@@ -30,6 +32,7 @@ pip install -r requirements-dev.txt
 cp .env.example .env            # isi SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, GEMINI_API_KEY
 uvicorn app.main:app --reload   # http://localhost:8000/docs
 pytest
+python -m evals.job_extraction run   # evaluasi ekstraksi lowongan (memanggil Gemini)
 
 # Frontend
 cd frontend

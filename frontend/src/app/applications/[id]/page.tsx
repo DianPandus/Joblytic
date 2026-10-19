@@ -66,16 +66,23 @@ export default async function ApplicationDetailPage(props: PageProps<"/applicati
           {application.company}
           {application.location ? ` · ${application.location}` : ""}
         </p>
-        {application.source_url && (
-          <a
-            href={application.source_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-1 inline-block break-all text-sm text-accent underline"
-          >
-            Lihat lowongan
-          </a>
-        )}
+        <p className="mt-1 flex flex-wrap gap-x-4 text-sm">
+          {application.source_url && (
+            <a
+              href={application.source_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="break-all text-accent underline"
+            >
+              Lihat lowongan
+            </a>
+          )}
+          {application.job_posting_id && (
+            <Link href={`/jobs/${application.job_posting_id}`} className="text-accent underline">
+              Hasil analisis lowongan
+            </Link>
+          )}
+        </p>
       </section>
 
       <section className="rounded-lg border border-border bg-card p-4">

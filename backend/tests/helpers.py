@@ -37,3 +37,18 @@ def profile(role="user", is_active=True):
 
 def bearer(token):
     return {"Authorization": f"Bearer {token}"}
+
+
+class FakeLLM:
+    model = "fake-model"
+
+    def __init__(self, responses):
+        self.responses = list(responses)
+        self.systems = []
+
+    async def generate_json(self, system, prompt, schema):
+        self.systems.append(system)
+        response = self.responses.pop(0)
+        if isinstance(response, Exception):
+            raise response
+        return response

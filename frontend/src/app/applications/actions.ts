@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { isEventKind, isStage } from "@/lib/applications";
+import { ValidationError, httpUrl, text } from "@/lib/form";
 import { createClient } from "@/lib/supabase/server";
 
 export type FormState = { error?: string; ok?: boolean };
@@ -16,31 +17,12 @@ async function requireUser() {
   return supabase;
 }
 
-function text(form: FormData, name: string, max: number): string | null {
-  const value = String(form.get(name) ?? "").trim();
-  if (!value) return null;
-  if (value.length > max) throw new ValidationError(`Isian "${name}" terlalu panjang.`);
-  return value;
-}
-
-function httpUrl(form: FormData, name: string): string | null {
-  const value = text(form, name, 2000);
-  if (!value) return null;
-  try {
-    const url = new URL(value);
-    if (url.protocol === "http:" || url.protocol === "https:") return url.toString();
-  } catch {}
-  throw new ValidationError("Tautan harus berupa URL http:// atau https://.");
-}
-
 function isoDate(form: FormData, name: string): string | null {
   const value = text(form, name, 10);
   if (!value) return null;
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) throw new ValidationError("Format tanggal tidak valid.");
   return value;
 }
-
-class ValidationError extends Error {}
 
 function applicationFields(form: FormData) {
   const company = text(form, "company", 200);

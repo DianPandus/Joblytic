@@ -1,4 +1,4 @@
-from datetime import UTC, datetime, timedelta, timezone
+from datetime import UTC, datetime
 
 import httpx
 from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, status
@@ -16,15 +16,9 @@ from app.cv import (
     redact,
 )
 from app.llm import LLMError, LLMQuotaError, get_llm
+from app.usage import start_of_today_wib
 
 router = APIRouter()
-
-WIB = timezone(timedelta(hours=7))
-
-
-def _start_of_today_wib() -> str:
-    now = datetime.now(WIB)
-    return now.replace(hour=0, minute=0, second=0, microsecond=0).isoformat()
 
 
 @router.post("/cv")
@@ -58,7 +52,7 @@ async def upload_cv(
         ) from exc
 
     try:
-        used = await supabase.count_cv_uploads_since(user, settings, _start_of_today_wib())
+        used = await supabase.count_cv_uploads_since(user, settings, start_of_today_wib())
     except httpx.HTTPError as exc:
         raise HTTPException(
             status.HTTP_503_SERVICE_UNAVAILABLE, "Database tidak bisa dihubungi."

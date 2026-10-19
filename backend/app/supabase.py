@@ -89,6 +89,34 @@ async def replace_profile_from_cv(
     return resp.json()
 
 
+async def select_rows(
+    user: "CurrentUser", settings: Settings, table: str, params: dict[str, str]
+) -> list[dict]:
+    async with httpx.AsyncClient(timeout=TIMEOUT) as client:
+        resp = await client.get(
+            _rest_url(settings, table), headers=_user_headers(user, settings), params=params
+        )
+        resp.raise_for_status()
+    return resp.json()
+
+
+async def insert_row(
+    user: "CurrentUser", settings: Settings, table: str, row: dict, returning: str | None = None
+) -> dict | None:
+    """Insert satu baris; bila `returning` diisi, kembalikan kolom tersebut dari baris baru."""
+    headers = _user_headers(user, settings)
+    params = {}
+    if returning:
+        headers["Prefer"] = "return=representation"
+        params["select"] = returning
+    async with httpx.AsyncClient(timeout=TIMEOUT) as client:
+        resp = await client.post(
+            _rest_url(settings, table), headers=headers, params=params, json=row
+        )
+        resp.raise_for_status()
+    return resp.json()[0] if returning else None
+
+
 async def ping_database(settings: Settings) -> str:
     """Mengembalikan "ok" atau alasan singkat kegagalan (tanpa membocorkan kunci)."""
     if not settings.supabase_url or not settings.supabase_publishable_key:

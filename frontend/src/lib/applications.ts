@@ -46,6 +46,7 @@ export type Application = {
   stage: Stage;
   stage_changed_at: string;
   notes: string | null;
+  job_posting_id: string | null;
   created_at: string;
   updated_at: string;
 };

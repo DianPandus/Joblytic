@@ -1,0 +1,88 @@
+DevOps Engineer
+
+PT Japfa Comfeed Indonesia, Tbk 
+4.2
+Lihat semua lowongan kerja
+Jakarta Selatan, Jakarta Raya
+Administrasi Jaringan & Sistem (Teknologi Informasi & Komunikasi)
+Full time
+Gaji tidak ditampilkan
+
+Diposting 5 hari yang lalu
+Pelamar sangat banyak
+
+Bagaimana Anda cocok
+Kecocokan berdasarkan riwayat karir Anda
+Github
+
+Penyebaran
+
+Pengembangan Software
+
+Troubleshooting
+
++4 selengkapnya⁠
+We are looking for motivated DevOps engineers who are passionate about automation and software delivery to join our team in building, maintaining, and improving our CI/CD pipelines and deployment workflows on AWS, with a strong focus on enabling development teams to ship reliably and quickly.
+
+Responsibilities
+•         Build, maintain, and improve CI/CD pipelines using tools such as GitLab CI, GitHub Actions, or AWS CodePipeline to automate build, test, and deployment processes.
+
+•         Containerize applications using Docker and support deployments to AWS container services such as Amazon ECS and Amazon EKS.
+
+•         Automate repetitive operational tasks through scripting and configuration management tools.
+
+•         Implement and maintain application monitoring, logging, and alerting using Datadog to improve visibility and reduce incident response time.
+
+•         Investigate and troubleshoot build, deployment, and runtime issues across environments by analyzing Datadog logs, traces, and metrics, and work with development teams on root cause analysis and fixes.
+
+•         Support release management, environment management (development, staging, production), and rollback procedures.
+
+•         Integrate security practices into the delivery pipeline (e.g., dependency scanning, image scanning, secret management with AWS Secrets Manager) in collaboration with the security team.
+
+•         Develop, review, and maintain DevOps SOPs, runbooks, and technical documentation.
+
+•         Stay up to date with DevOps tools and AWS practices, and promote automation and continuous improvement across teams.
+
+Qualifications
+•         Bachelor’s degree in Computer Science, Information Technology, Software Engineering, or other related fields.
+
+•         0–2 years of experience in DevOps, software development, or system administration roles.
+
+(Fresh graduates with relevant skills, projects, or labs are welcome to apply.)
+
+•         Hands-on experience with Git and Git-based workflows (branching, merge requests, code review).
+
+•         Basic experience building or maintaining CI/CD pipelines.
+
+•         Familiarity with Docker and containerization concepts.
+
+•         Good understanding of Linux operating systems and command-line tools.
+
+•         Scripting ability in Bash, Python, or similar languages.
+
+•         Basic understanding of networking concepts and AWS core services (EC2, S3, IAM, VPC).
+
+•         Familiarity with Datadog, or a solid understanding of monitoring fundamentals (metrics, logs, traces, alerting) and willingness to learn Datadog.
+
+•         Strong troubleshooting skills with a methodical, detail-oriented approach: able to dig into logs, metrics, and configurations to isolate the root cause of an issue rather than only fixing the symptoms.
+
+•         Strong analytical thinking, problem-solving, and communication skills.
+
+•         High attention to detail, strong sense of ownership, and the ability to work independently as well as collaboratively within a team.
+
+Preferred Qualifications
+•         AWS certifications such as AWS Certified Developer – Associate, AWS Certified SysOps Administrator – Associate, or AWS Certified DevOps Engineer – Professional, or Kubernetes certifications such as CKAD or CKA.
+
+(Certifications are a plus, not a requirement.)
+
+•         Hands-on experience with Datadog APM, log management, or monitors.
+
+•         Experience with Amazon EKS / Kubernetes and tools such as Helm or Argo CD.
+
+•         Familiarity with Infrastructure as Code tools such as Terraform or AWS CloudFormation.
+
+•         Familiarity with DevSecOps concepts and practices.
+
+•         Understanding of the software development lifecycle (SDLC) and agile practices.
+
+•         A portfolio of personal projects, open-source contributions, or public pipeline/automation repositories is a plus.

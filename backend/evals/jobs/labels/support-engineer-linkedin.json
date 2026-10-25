@@ -1,0 +1,34 @@
+{
+  "verified": true,
+  "position": "Jr. Support Engineer",
+  "company": "NTT Data",
+  "location": "Jakarta Selatan - Kuningan",
+  "required_skills": [
+    "Atlassian",
+    "JIRA",
+    "Confluence",
+    "Github",
+    "Java Development",
+    "SQL",
+    "AI Prompting",
+    "Linux",
+    "Windows",
+    "Google Cloud Platform",
+    "postman",
+    "postqresql",
+    "SQL Server"
+  ],
+  "preferred_skills": [],
+  "education_level": "s1",
+  "education_fields": [
+    "information technology",
+    "Business"
+  ],
+  "min_experience_years": 1.0,
+  "responsibilities": [
+    "Support monitoring and maintain application",
+    "Diagnosis and Investigation any issue occurs",
+    "Communicate incident to stakeholders",
+    "Resolution and recovery any issue occurs"
+  ]
+}

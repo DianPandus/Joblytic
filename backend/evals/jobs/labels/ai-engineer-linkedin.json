@@ -1,0 +1,36 @@
+{
+  "verified": true,
+  "position": "AI ENGINEER",
+  "company": null,
+  "location": "Jakarta",
+  "required_skills": [
+    "AI solutions",
+    "database systems",
+    "integrasi sistem",
+    "database design",
+    "data modeling",
+    "SQL",
+    "pengelolaan database relasional",
+    "pengelolaan database non-relasional",
+    "Large Language Models (LLM)",
+    "AI agents",
+    "Retrieval-Augmented Generation (RAG)",
+    "API integration",
+    "workflow automation",
+    "integrasi data"
+  ],
+  "preferred_skills": [
+    "data governance",
+    "access control",
+    "keamanan informasi"
+  ],
+  "education_level": "s1",
+  "education_fields": [
+    "Teknik Informatika",
+    "Ilmu Komputer",
+    "Sistem Informasi",
+    "Data Science"
+  ],
+  "min_experience_years": null,
+  "responsibilities": []
+}

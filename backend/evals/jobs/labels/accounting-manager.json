@@ -1,0 +1,33 @@
+{
+  "verified": true,
+  "position": "Accounting Manager",
+  "company": "Monee",
+  "location": "São Paulo",
+  "required_skills": [
+    "Microsoft Office",
+    "Excel",
+    "English",
+    "Accounting",
+    "CADOC regulatory reports",
+    "IFRS"
+  ],
+  "preferred_skills": [],
+  "education_level": "s1",
+  "education_fields": [
+    "accounting"
+  ],
+  "min_experience_years": null,
+  "responsibilities": [
+    "Develop staff and manage the performance of the members;",
+    "Develop a team and work in a growing and dynamic environment;",
+    "Set goals and provide ongoing training;",
+    "Responsible for analyzing reconciliations and reviewing the reports;",
+    "Account variance analysis for reporting purposes (Month to Month, Year to Year, and explanations);",
+    "Manage timely accounting closing and accounting daily activities according to IFRS;",
+    "Support daily to AP, AR, ensuring efficient and accurate finance processes for all local operations;",
+    "Responsible for conducting the annual audit process with the external and internal auditors;",
+    "Maintain records in accordance with accounting standards, including impacts of new or changes to existing standard;",
+    "Ensure adherence to the group policies;",
+    "Ensure alignment between the Accounting team and other areas of the company."
+  ]
+}

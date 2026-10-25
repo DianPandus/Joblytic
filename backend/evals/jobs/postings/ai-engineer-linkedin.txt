@@ -1,0 +1,20 @@
+WE ARE #HIRING – AI ENGINEER
+
+Placement: Jakarta
+Industry: Manufacture Packaging
+
+Requirements:
+- Pendidikan minimal S1 Teknik Informatika, Ilmu Komputer, Sistem Informasi, Data Science, atau bidang terkait.
+- Memiliki pengalaman dalam pengembangan AI solutions, database systems, dan integrasi sistem.
+- Memahami database design, data modeling, SQL, serta pengelolaan database relasional maupun non-relasional.
+- Memiliki pengalaman membangun aplikasi berbasis AI, termasuk pemanfaatan Large Language Models (LLM), AI agents, atau Retrieval-Augmented Generation (RAG).
+- Memahami API integration, workflow automation, serta integrasi data dari berbagai sistem dan aplikasi.
+- Memiliki pengalaman membangun sistem terintegrasi atau ekosistem teknologi dari tahap perancangan hingga implementasi.
+- Mampu menganalisis kebutuhan bisnis dan mengembangkan solusi yang scalable, aman, serta mudah digunakan.
+- Memiliki kemampuan problem-solving, komunikasi, dan kolaborasi lintas divisi yang baik.
+Preferred Qualifications:
+- Pernah membangun database atau sistem terintegrasi yang digunakan oleh beberapa divisi perusahaan.
+- Memiliki portfolio proyek AI automation, internal AI assistant, enterprise knowledge base, atau enterprise AI ecosystem.
+- Memahami data governance, access control, dan keamanan informasi perusahaan.
+
+Subject: AI Engineer - Nama

@@ -1,0 +1,61 @@
+{
+  "verified": true,
+  "position": "DevOps Engineer",
+  "company": "PT Japfa Comfeed Indonesia, Tbk",
+  "location": "Jakarta Selatan, Jakarta Raya",
+  "required_skills": [
+    "Troubleshooting",
+    "Git",
+    "Docker",
+    "Linux",
+    "Bash",
+    "Python",
+    "Datadog",
+    "CI/CD",
+    "AWS",
+    "EC2",
+    "S3",
+    "IAM",
+    "VPC",
+    "GitLab CI",
+    "GitHub Actions",
+    "AWS CodePipeline",
+    "Amazon ECS",
+    "AWS Secrets Manager"
+  ],
+  "preferred_skills": [
+    "AWS Certified Developer – Associate",
+    "AWS Certified SysOps Administrator – Associate",
+    "AWS Certified DevOps Engineer – Professional",
+    "CKAD",
+    "CKA",
+    "Datadog APM",
+    "Amazon EKS",
+    "Kubernetes",
+    "Helm",
+    "Argo CD",
+    "Terraform",
+    "AWS CloudFormation",
+    "DevSecOps",
+    "SDLC",
+    "agile"
+  ],
+  "education_level": "s1",
+  "education_fields": [
+    "Computer Science",
+    "Information Technology",
+    "Software Engineering"
+  ],
+  "min_experience_years": 0.0,
+  "responsibilities": [
+    "Build, maintain, and improve CI/CD pipelines using tools such as GitLab CI, GitHub Actions, or AWS CodePipeline to automate build, test, and deployment processes.",
+    "Containerize applications using Docker and support deployments to AWS container services such as Amazon ECS and Amazon EKS.",
+    "Automate repetitive operational tasks through scripting and configuration management tools.",
+    "Implement and maintain application monitoring, logging, and alerting using Datadog to improve visibility and reduce incident response time.",
+    "Investigate and troubleshoot build, deployment, and runtime issues across environments by analyzing Datadog logs, traces, and metrics, and work with development teams on root cause analysis and fixes.",
+    "Support release management, environment management (development, staging, production), and rollback procedures.",
+    "Integrate security practices into the delivery pipeline (e.g., dependency scanning, image scanning, secret management with AWS Secrets Manager) in collaboration with the security team.",
+    "Develop, review, and maintain DevOps SOPs, runbooks, and technical documentation.",
+    "Stay up to date with DevOps tools and AWS practices, and promote automation and continuous improvement across teams."
+  ]
+}

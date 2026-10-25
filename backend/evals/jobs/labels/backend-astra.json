@@ -1,0 +1,47 @@
+{
+  "verified": true,
+  "position": "Backend Developer - Java - ADMO",
+  "company": "PT Astra Digital Mobil",
+  "location": "Jakarta",
+  "required_skills": [
+    "Java",
+    "Node.js",
+    "JavaSpring",
+    "Springboot",
+    "PostgreSQL",
+    "mySQL",
+    "Object-Oriented Programming",
+    "SDLC Scrum",
+    "Unit Testing",
+    "Design Pattern",
+    "Code Convention",
+    "Message Broker",
+    "Kafka",
+    "RabbitMQ",
+    "AWS Cloud",
+    "API Contract",
+    "Docker",
+    "Kubernetes",
+    "CI/CD",
+    "code review",
+    "API"
+  ],
+  "preferred_skills": [
+    "PHP",
+    "Golang"
+  ],
+  "education_level": "s1",
+  "education_fields": [
+    "Teknik Informatika",
+    "Sistem Informasi",
+    "Teknik Komputer",
+    "Manajemen Informatika"
+  ],
+  "min_experience_years": 2.0,
+  "responsibilities": [
+    "Mengembangkan dan memelihara server dan backend menggunakan Java untuk mendukung fungsi dan fitur dalam platform penjualan mobil bekas.",
+    "Merancang dan mengimplementasikan API (Application Programming Interface) yang efisien untuk memastikan komunikasi yang lancar antara frontend dan backend, serta dengan pihak-pihak eksternal seperti sistem pembayaran dan penyedia layanan lainnya.",
+    "Menjalankan pengujian dan debugging secara rutin untuk memastikan keamanan, stabilitas, dan skalabilitas dari aplikasi server menggunakan Node.js.",
+    "Mengoptimalkan kinerja aplikasi dan server, serta melakukan pemantauan untuk mengidentifikasi dan mengatasi masalah performa guna memberikan pengalaman yang lebih baik kepada pengguna"
+  ]
+}

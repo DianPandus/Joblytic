@@ -1,0 +1,36 @@
+{
+  "verified": true,
+  "position": "Data Engineer (Credit) - Sea Labs",
+  "company": "Monee",
+  "location": "Jakarta",
+  "required_skills": [
+    "SQL",
+    "Python",
+    "Scala",
+    "Java",
+    "Spark",
+    "Flink",
+    "data warehousing",
+    "dimensional modeling",
+    "Data Mart development",
+    "Kafka",
+    "Hive",
+    "Airflow",
+    "ETL",
+    "data modeling"
+  ],
+  "preferred_skills": [
+    "Feature Engineering",
+    "Feature Stores",
+    "data/feature platforms"
+  ],
+  "education_level": null,
+  "education_fields": [],
+  "min_experience_years": 3.0,
+  "responsibilities": [
+    "Develop, optimize, and maintain batch and real-time feature pipelines using Spark/Flink.",
+    "Design, build, and maintain business Data Marts, including data modeling, ETL development, and performance optimization.",
+    "Ensure data quality, accuracy, and pipeline reliability, continuously improving data processing efficiency.",
+    "Collaborate with DS, policy, risk and business teams to support feature engineering and data requirements."
+  ]
+}

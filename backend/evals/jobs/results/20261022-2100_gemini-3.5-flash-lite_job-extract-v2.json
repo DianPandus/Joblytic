@@ -1,0 +1,799 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "prompt_version": "job-extract-v2",
+  "n": 17,
+  "failures": [
+    "data-visualization-astra"
+  ],
+  "fields": {
+    "position": {
+      "metric": "accuracy",
+      "score": 0.9411764705882353,
+      "errors": [
+        "data-engineer-monee"
+      ]
+    },
+    "company": {
+      "metric": "accuracy",
+      "score": 1.0,
+      "errors": []
+    },
+    "location": {
+      "metric": "accuracy",
+      "score": 0.9411764705882353,
+      "errors": [
+        "risk-analyst-jobstreet"
+      ]
+    },
+    "education_level": {
+      "metric": "accuracy",
+      "score": 1.0,
+      "errors": []
+    },
+    "min_experience_years": {
+      "metric": "accuracy",
+      "score": 0.9411764705882353,
+      "errors": [
+        "ai-deloitte"
+      ]
+    },
+    "required_skills": {
+      "metric": "f1",
+      "score": 0.8072289156626506,
+      "precision": 0.8340248962655602,
+      "recall": 0.7821011673151751,
+      "errors": [
+        "accounting-manager",
+        "ai-deloitte",
+        "ai-engineer-linkedin",
+        "backend-astra",
+        "business-analyst-jobstreet-2",
+        "business-analyst-jobstreet",
+        "dashboard-developer-jobstreet",
+        "data-analyst-astra",
+        "data-engineer-monee",
+        "devops-engineer-jobstreet",
+        "risk-analyst-jobstreet",
+        "software-engineer-astra",
+        "staff-it-jobstreet",
+        "support-engineer-linkedin",
+        "technical-system-jobstreet"
+      ]
+    },
+    "preferred_skills": {
+      "metric": "f1",
+      "score": 0.7547169811320755,
+      "precision": 0.7017543859649122,
+      "recall": 0.8163265306122449,
+      "errors": [
+        "ai-engineer-linkedin",
+        "backend-astra",
+        "business-analyst-jobstreet-2",
+        "devops-engineer-jobstreet",
+        "front-end-jobstreet",
+        "staff-it-jobstreet",
+        "technical-system-jobstreet"
+      ]
+    },
+    "education_fields": {
+      "metric": "f1",
+      "score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "errors": []
+    },
+    "responsibilities": {
+      "metric": "f1",
+      "score": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "errors": []
+    }
+  },
+  "predictions": {
+    "accounting-manager": {
+      "position": "Accounting Manager",
+      "company": "Monee",
+      "location": "São Paulo",
+      "required_skills": [
+        "Microsoft Office",
+        "Excel",
+        "English",
+        "Accounting",
+        "CADOC regulatory reports"
+      ],
+      "preferred_skills": [],
+      "education_level": "s1",
+      "education_fields": [
+        "accounting"
+      ],
+      "min_experience_years": null,
+      "responsibilities": [
+        "Develop staff and manage the performance of the members",
+        "Develop a team and work in a growing and dynamic environment",
+        "Set goals and provide ongoing training",
+        "Responsible for analyzing reconciliations and reviewing the reports",
+        "Account variance analysis for reporting purposes (Month to Month, Year to Year, and explanations)",
+        "Manage timely accounting closing and accounting daily activities according to IFRS",
+        "Support daily to AP, AR, ensuring efficient and accurate finance processes for all local operations",
+        "Responsible for conducting the annual audit process with the external and internal auditors",
+        "Maintain records in accordance with accounting standards, including impacts of new or changes to existing standard",
+        "Ensure adherence to the group policies",
+        "Ensure alignment between the Accounting team and other areas of the company"
+      ]
+    },
+    "ai-deloitte": {
+      "position": "T&T Consultant - Artificial Intelligence & Data (Data Engineer) - ID",
+      "company": "Deloitte",
+      "location": "Jakarta, ID",
+      "required_skills": [
+        "robotic process automation",
+        "intelligent character recognition",
+        "chatbots/virtual assistants",
+        "artificial intelligence",
+        "Microsoft SQL",
+        "Oracle",
+        "SAP",
+        "Cloudera",
+        "IBM Watsons",
+        "MuleSoft",
+        "Qlik Technologies",
+        "Informatica",
+        "Data Governance",
+        "Data Quality",
+        "MDM",
+        "Metadata management",
+        "DataRobot",
+        "Python",
+        "R",
+        "Scala",
+        "Pivotal",
+        "Hortonworks",
+        "MapR",
+        "Oracle BDA",
+        "SQL",
+        "Oracle DB",
+        "Microsoft SQL Server",
+        "IBM Netezza",
+        "Teradata",
+        "MySQL",
+        "Spark",
+        "Hive",
+        "Pig",
+        "Kafka",
+        "MapReduce",
+        "HBase",
+        "Sqoop",
+        "Flume",
+        "Storm",
+        "Git",
+        "Subversion",
+        "Mercurial",
+        "Linux/Unix",
+        "Shell scripting",
+        "English"
+      ],
+      "preferred_skills": [],
+      "education_level": "s1",
+      "education_fields": [
+        "Computer Science",
+        "Software Engineering",
+        "Statistics",
+        "Mathematics"
+      ],
+      "min_experience_years": 2.0,
+      "responsibilities": [
+        "Apply emerging technologies to help our clients maximize the value of their data by generating actionable insights that provide real business outcomes.",
+        "Designing and implementing data structures to support Big Data, Analytical models and traditional BI/DW reporting solutions using technologies such as Microsoft SQL, Oracle, SAP, Cloudera, IBM Watsons, MuleSoft, Qlik Technologies or Informatica.",
+        "Designing and developing data integration using Data Governance, Data Quality, MDM and Metadata management.",
+        "Applying analytical models to predict business outcomes with tools such as DataRobot and languages like Python or R."
+      ]
+    },
+    "ai-engineer-linkedin": {
+      "position": "AI Engineer",
+      "company": null,
+      "location": "Jakarta",
+      "required_skills": [
+        "database systems",
+        "integrasi sistem",
+        "database design",
+        "data modeling",
+        "SQL",
+        "pengelolaan database",
+        "Large Language Models (LLM)",
+        "AI agents",
+        "Retrieval-Augmented Generation (RAG)",
+        "API integration",
+        "workflow automation",
+        "integrasi data",
+        "problem-solving",
+        "komunikasi",
+        "kolaborasi"
+      ],
+      "preferred_skills": [
+        "database",
+        "sistem terintegrasi",
+        "AI automation",
+        "internal AI assistant",
+        "enterprise knowledge base",
+        "enterprise AI ecosystem",
+        "data governance",
+        "access control",
+        "keamanan informasi"
+      ],
+      "education_level": "s1",
+      "education_fields": [
+        "Teknik Informatika",
+        "Ilmu Komputer",
+        "Sistem Informasi",
+        "Data Science"
+      ],
+      "min_experience_years": null,
+      "responsibilities": []
+    },
+    "backend-astra": {
+      "position": "Backend Developer - Java - ADMO",
+      "company": "PT Astra Digital Mobil",
+      "location": "Jakarta",
+      "required_skills": [
+        "Java",
+        "API",
+        "Node.js",
+        "JavaSpring / Springboot",
+        "PostgreSQL / mySQL database",
+        "Object-Oriented Programming",
+        "SDLC Scrum",
+        "Unit Testing / Design Pattern / Code Convention",
+        "Message Broker (Kafka / RabbitMQ)",
+        "AWS Cloud",
+        "API Contract",
+        "Docker / Kubernetes",
+        "CI/CD",
+        "code review",
+        "problem-solving",
+        "interpersonal",
+        "analisis"
+      ],
+      "preferred_skills": [
+        "Bahasa Pemrograman lain (Node.JS / PHP / Golang / etc)"
+      ],
+      "education_level": "s1",
+      "education_fields": [
+        "Teknik Informatika",
+        "Sistem Informasi",
+        "Teknik Komputer",
+        "Manajemen Informatika"
+      ],
+      "min_experience_years": 2.0,
+      "responsibilities": [
+        "Mengembangkan dan memelihara server dan backend menggunakan Java untuk mendukung fungsi dan fitur dalam platform penjualan mobil bekas.",
+        "Merancang dan mengimplementasikan API (Application Programming Interface) yang efisien untuk memastikan komunikasi yang lancar antara frontend dan backend, serta dengan pihak-pihak eksternal seperti sistem pembayaran dan penyedia layanan lainnya.",
+        "Menjalankan pengujian dan debugging secara rutin untuk memastikan keamanan, stabilitas, dan skalabilitas dari aplikasi server menggunakan Node.js.",
+        "Mengoptimalkan kinerja aplikasi dan server, serta melakukan pemantauan untuk mengidentifikasi dan mengatasi masalah performa guna memberikan pengalaman yang lebih baik kepada pengguna"
+      ]
+    },
+    "business-analyst-jobstreet-2": {
+      "position": "Fresh Graduate Business Analyst",
+      "company": "PT Amber Solusi Internasional",
+      "location": "Jakarta Raya",
+      "required_skills": [
+        "business requirement analysis",
+        "user stories",
+        "functional design",
+        "flow diagrams",
+        "process diagram",
+        "state diagrams",
+        "application testing",
+        "SIT",
+        "User Acceptance Testing",
+        "End User Training",
+        "project documentation",
+        "postproduction support",
+        "logic",
+        "analytical problem-solving",
+        "communication",
+        "interpersonal",
+        "leadership",
+        "software development methodology",
+        "English"
+      ],
+      "preferred_skills": [
+        "Business Analyst",
+        "System Analyst",
+        "Functional Consultant"
+      ],
+      "education_level": "s1",
+      "education_fields": [
+        "Information Systems",
+        "Computer Science"
+      ],
+      "min_experience_years": 0.0,
+      "responsibilities": [
+        "Actively involved in business requirement analysis/user stories",
+        "Meet with business users throughout the organization to understand their business objectives, technical challenges and data needs, and prepare functional design document",
+        "Leading review sessions with business users to review functional design",
+        "Develop and maintain system level artifacts, such as flow diagrams, process diagram, and current and proposed state diagrams",
+        "Intensive discussion with development team to ensure the development as per functional design",
+        "Doing application testing and SIT",
+        "Leading User Acceptance Testing",
+        "Leading End User Training",
+        "Write and maintain related project documentation",
+        "Manage postproduction support activities"
+      ]
+    },
+    "business-analyst-jobstreet": {
+      "position": "BUSINESS ANALYST INTERNATIONAL DIVISION",
+      "company": "PT Bahana Inovasi Adikarya",
+      "location": "Jakarta Raya",
+      "required_skills": [
+        "analytical",
+        "Excel",
+        "critical-thinking",
+        "communication",
+        "presentation"
+      ],
+      "preferred_skills": [
+        "business/sales analysis",
+        "commercial planning",
+        "market research",
+        "FMCG"
+      ],
+      "education_level": "s1",
+      "education_fields": [
+        "Business",
+        "Economics",
+        "Statistics",
+        "Finance",
+        "Management"
+      ],
+      "min_experience_years": 0.0,
+      "responsibilities": [
+        "Business Analysis & Forecasting: Analyze sales, product movement, pricing, distribution, and market trends; develop forecasts and projections.",
+        "Performance Monitoring: Track sales targets, distribution coverage, and KPIs; identify gaps, risks, and growth opportunities, and recommend actions.",
+        "Market Intelligence: Monitor competitors, consumer behavior, and market dynamics to support commercial strategies and expansion.",
+        "Field Engagement: Visit markets and outlets, interact with consumers, observe distribution activities, and validate data with firsthand insights.",
+        "Distributor Collaboration: Communicate confidently with distributors, review performance, identify challenges, and follow up on action plans.",
+        "Reporting & Presentation: Prepare reports and presentations that translate data into clear insights, projections, and recommendations.",
+        "Cross-functional Collaboration: Coordinate with international sales, marketing, supply chain, and other teams to support business planning and execution."
+      ]
+    },
+    "dashboard-developer-jobstreet": {
+      "position": "Power BI / Dashboard Developer",
+      "company": "PT Kinarya Alihdaya Mandiri",
+      "location": "Jakarta Selatan, Jakarta Raya",
+      "required_skills": [
+        "Microsoft Power BI",
+        "Power BI Desktop",
+        "Power BI Service",
+        "visualisasi data",
+        "desain dashboard",
+        "pemantauan",
+        "pemodelan data",
+        "DAX",
+        "Power Query",
+        "ETL",
+        "Excel",
+        "SQL Database",
+        "API",
+        "SQL",
+        "analisis data",
+        "validasi data"
+      ],
+      "preferred_skills": [],
+      "education_level": "s1",
+      "education_fields": [
+        "Teknik Informatika",
+        "sistem informasi"
+      ],
+      "min_experience_years": null,
+      "responsibilities": [
+        "Mengembangkan dan memelihara dashboard kinerja bisnis yang interaktif menggunakan Power BI.",
+        "Merancang sistem pemantauan KPI, pelaporan, dan analitik kinerja.",
+        "Mengintegrasikan, mentransformasi, dan memvalidasi data dari berbagai sumber.",
+        "Mengotomatisasi proses pelaporan untuk meningkatkan efisiensi dan akurasi.",
+        "Berkolaborasi dengan team untuk kepentingan bisnis untuk mengidentifikasi kebutuhan reporting.",
+        "Menyediakan insight berbasis data untuk mendukung pengambilan keputusan manajemen."
+      ]
+    },
+    "data-analyst-astra": {
+      "position": "Data Analyst - AID",
+      "company": "Astra Financial - Sedaya Multi Investama",
+      "location": null,
+      "required_skills": [
+        "machine learning",
+        "predictive modeling",
+        "SQL",
+        "Big Data",
+        "data warehouse",
+        "exploratory data analysis (EDA)",
+        "Artificial Intelligence (AI)",
+        "Generative AI (GenAI)",
+        "analitis"
+      ],
+      "preferred_skills": [
+        "Power BI",
+        "Tableau"
+      ],
+      "education_level": "s1",
+      "education_fields": [
+        "Data Science",
+        "Ilmu Komputer",
+        "Teknologi Informasi",
+        "Matematika",
+        "Statistika"
+      ],
+      "min_experience_years": 0.0,
+      "responsibilities": [
+        "Menganalisis kebutuhan bisnis dari pengguna atau unit bisnis dan menerjemahkannya ke dalam pendekatan analisis data.",
+        "Mengeksplorasi dan menganalisis data untuk mengidentifikasi pola, tren, dan insight utama.",
+        "Menyiapkan, mengelola, dan mengembangkan dataset serta model analisis (data cleaning, transformasi, standardisasi, evaluasi, dan fine-tuning) sesuai dengan kebutuhan pengguna.",
+        "Menyampaikan insight dan rekomendasi kepada unit bisnis dan manajemen untuk mendukung pengambilan keputusan.",
+        "Melaksanakan UAT (User Acceptance Testing), memberikan dukungan pada proses deployment bersama pengguna, serta mendokumentasikan hasil analisis.",
+        "Menganalisis tingkat akurasi model data secara berkala dan melakukan fine-tuning apabila diperlukan.",
+        "Merancang dan menyajikan visualisasi data serta dashboard yang informatif sesuai dengan kebutuhan pengguna.",
+        "Memastikan dokumentasi administrasi tersusun dengan baik serta menyusun standardisasi aturan dan prosedur formal."
+      ]
+    },
+    "data-engineer-monee": {
+      "position": "Data Engineer (Credit)",
+      "company": "Monee",
+      "location": "Jakarta",
+      "required_skills": [
+        "SQL",
+        "Python",
+        "Scala",
+        "Java",
+        "Spark",
+        "Flink",
+        "data warehousing",
+        "dimensional modeling",
+        "Data Mart development",
+        "Kafka",
+        "Hive",
+        "Airflow"
+      ],
+      "preferred_skills": [
+        "Feature Engineering",
+        "Feature Stores",
+        "data/feature platforms"
+      ],
+      "education_level": null,
+      "education_fields": [],
+      "min_experience_years": 3.0,
+      "responsibilities": [
+        "Develop, optimize, and maintain batch and real-time feature pipelines using Spark/Flink.",
+        "Design, build, and maintain business Data Marts, including data modeling, ETL development, and performance optimization.",
+        "Ensure data quality, accuracy, and pipeline reliability, continuously improving data processing efficiency.",
+        "Collaborate with DS, policy, risk and business teams to support feature engineering and data requirements."
+      ]
+    },
+    "devops-engineer-jobstreet": {
+      "position": "DevOps Engineer",
+      "company": "PT Japfa Comfeed Indonesia, Tbk",
+      "location": "Jakarta Selatan, Jakarta Raya",
+      "required_skills": [
+        "GitLab CI",
+        "GitHub Actions",
+        "AWS CodePipeline",
+        "Docker",
+        "Amazon ECS",
+        "Amazon EKS",
+        "Datadog",
+        "Git",
+        "Linux",
+        "Bash",
+        "Python",
+        "networking",
+        "EC2",
+        "S3",
+        "IAM",
+        "VPC",
+        "troubleshooting",
+        "analytical thinking",
+        "problem-solving",
+        "communication"
+      ],
+      "preferred_skills": [
+        "AWS Certified Developer – Associate",
+        "AWS Certified SysOps Administrator – Associate",
+        "AWS Certified DevOps Engineer – Professional",
+        "CKAD",
+        "CKA",
+        "Datadog APM",
+        "log management",
+        "monitors",
+        "Kubernetes",
+        "Helm",
+        "Argo CD",
+        "Terraform",
+        "AWS CloudFormation",
+        "DevSecOps",
+        "software development lifecycle (SDLC)",
+        "agile"
+      ],
+      "education_level": "s1",
+      "education_fields": [
+        "Computer Science",
+        "Information Technology",
+        "Software Engineering"
+      ],
+      "min_experience_years": 0.0,
+      "responsibilities": [
+        "Build, maintain, and improve CI/CD pipelines using tools such as GitLab CI, GitHub Actions, or AWS CodePipeline to automate build, test, and deployment processes.",
+        "Containerize applications using Docker and support deployments to AWS container services such as Amazon ECS and Amazon EKS.",
+        "Automate repetitive operational tasks through scripting and configuration management tools.",
+        "Implement and maintain application monitoring, logging, and alerting using Datadog to improve visibility and reduce incident response time.",
+        "Investigate and troubleshoot build, deployment, and runtime issues across environments by analyzing Datadog logs, traces, and metrics, and work with development teams on root cause analysis and fixes.",
+        "Support release management, environment management (development, staging, production), and rollback procedures.",
+        "Integrate security practices into the delivery pipeline (e.g., dependency scanning, image scanning, secret management with AWS Secrets Manager) in collaboration with the security team.",
+        "Develop, review, and maintain DevOps SOPs, runbooks, and technical documentation.",
+        "Stay up to date with DevOps tools and AWS practices, and promote automation and continuous improvement across teams."
+      ]
+    },
+    "front-end-jobstreet": {
+      "position": "Front-End Developer",
+      "company": "PT Mitra Informatika",
+      "location": "Surabaya, Jawa Timur",
+      "required_skills": [
+        "OOP",
+        "HTML",
+        "CSS",
+        "Javascript",
+        "Responsible",
+        "honest",
+        "communicative",
+        "integrity"
+      ],
+      "preferred_skills": [
+        "Javascript Framework (Ext JS)"
+      ],
+      "education_level": null,
+      "education_fields": [],
+      "min_experience_years": 1.0,
+      "responsibilities": [
+        "Design, develop, & maintain application's UI through consistent and secure approach",
+        "Test & perform code deployment to production environment",
+        "Modify & enhance current application Front-End to adapt to business requirement"
+      ]
+    },
+    "human-resources-monee": {
+      "position": "Human Resource Business Partner Specialist (Monee Credit)",
+      "company": "Monee",
+      "location": "Jakarta",
+      "required_skills": [
+        "interpersonal communications",
+        "Employee Relations",
+        "Manpower Planning",
+        "Industrial Relations",
+        "critical thinking",
+        "English"
+      ],
+      "preferred_skills": [
+        "Credit",
+        "E-wallet"
+      ],
+      "education_level": "s1",
+      "education_fields": [],
+      "min_experience_years": 5.0,
+      "responsibilities": [
+        "Partner with business leaders to understand the strategic priorities and operational needs of the business.",
+        "Provide data-driven insights and strategic HR advice to drive business results.",
+        "Develop and implement HR strategies and initiatives that align with business objectives and company culture.",
+        "Collaborate with business leaders on workforce planning, talent acquisition, and retention strategies.",
+        "Lead and support succession planning and career development programs.",
+        "Work closely with recruitment teams to ensure that hiring processes meet business needs and expectations.",
+        "Build and maintain strong relationships with employees at all levels, acting as a point of contact for HR-related inquiries.",
+        "Advise managers and employees on employee relations issues, performance management, and conflict resolution.",
+        "Drive initiatives to improve employee engagement, satisfaction, and retention.",
+        "Implement performance management frameworks and ensure alignment with business goals.",
+        "Provide coaching and support to managers in handling performance issues and career development for employees.",
+        "Lead talent reviews and support the identification of high-potential employees for development programs.",
+        "Support the organization’s change management efforts to improve efficiency, agility, and employee engagement.",
+        "Assist in the redesign of structures or processes, ensuring they meet business objectives and improve employee experience.",
+        "Lead HR-driven organizational development initiatives that promote continuous improvement and innovation.",
+        "Drive HR programs (compensation, benefits, training, etc.) to support employee development and organizational effectiveness.",
+        "Provide HR metrics and reporting to leadership to track progress and identify areas for improvement.",
+        "Leverage HR analytics tools to gather insights, monitor trends, and drive business decisions.",
+        "Provide reports and analysis to business leaders regarding key HR metrics (e.g., turnover rates, engagement levels, etc.).",
+        "Recommend HR interventions based on data-driven insights."
+      ]
+    },
+    "risk-analyst-jobstreet": {
+      "position": "Risk Analyst",
+      "company": "DC Group Capital Indonesia",
+      "location": "Jakarta Selatan",
+      "required_skills": [
+        "Microsoft Excel",
+        "English",
+        "communication"
+      ],
+      "preferred_skills": [
+        "Mandarin"
+      ],
+      "education_level": "d3",
+      "education_fields": [
+        "Finance",
+        "Economics",
+        "Mathematics",
+        "Statistics",
+        "Computer Science"
+      ],
+      "min_experience_years": null,
+      "responsibilities": [
+        "Monitor daily operational activities, workflow status, resource utilization, and process progress in real time.",
+        "Track and manage operational risks related to business activities, resource allocation, performance indicators, and internal processes.",
+        "Monitor service quality, processing efficiency, response times, error rates, and overall operational performance.",
+        "Identify and resolve irregular activities, process discrepancies, system delays, resource constraints, and other operational issues.",
+        "Analyze business activity trends, workflow patterns, and operational performance data to identify potential risks and improvement opportunities.",
+        "Assist in reviewing and optimizing operational procedures, system configurations, service standards, and internal control measures.",
+        "Support risk management, resource coordination, and operational planning based on changing business conditions and organizational objectives.",
+        "Collaborate with Sales, Compliance, Operations, Finance, and Technology teams to resolve daily operational, system, and business-related issues.",
+        "Coordinate with external service providers, technology partners, and system vendors to ensure smooth and efficient business operations.",
+        "Prepare daily operational reports, performance analyses, risk assessment reports, incident reports, and business activity summaries.",
+        "Monitor industry developments, business conditions, and external factors that may affect operational performance.",
+        "Ensure all operational activities comply with company policies, risk management procedures, internal controls, and applicable regulatory requirements.",
+        "Support management in improving operational workflows, risk monitoring processes, system efficiency, and overall business operation standards."
+      ]
+    },
+    "software-engineer-astra": {
+      "position": "Software Engineer - GSI",
+      "company": "PT Global Service Indonesia",
+      "location": null,
+      "required_skills": [
+        "C#",
+        ".NET 5",
+        "API",
+        "Microsoft SQL Server",
+        "debugging",
+        "troubleshooting",
+        "SIT",
+        "UAT",
+        "penetration testing",
+        "RDBMS",
+        "SQL",
+        "Query",
+        "DML",
+        "DDL",
+        "JavaScript",
+        "Git",
+        "problem-solving",
+        "komunikasi",
+        "interpersonal",
+        "presentasi"
+      ],
+      "preferred_skills": [
+        "jQuery",
+        "Telerik Kendo UI",
+        "Keycloak",
+        "Redis",
+        "Elasticsearch",
+        "Kubernetes"
+      ],
+      "education_level": "s1",
+      "education_fields": [
+        "Teknik Informatika",
+        "Ilmu Komputer",
+        "Rekayasa Perangkat Lunak"
+      ],
+      "min_experience_years": 3.0,
+      "responsibilities": [
+        "Mengembangkan, memelihara, dan meningkatkan aplikasi menggunakan C# dan .NET 5 atau versi lebih baru.",
+        "Mengembangkan dan mengintegrasikan API untuk mendukung kebutuhan aplikasi dan sistem.",
+        "Mengelola database menggunakan Microsoft SQL Server, termasuk pembuatan query, pengolahan data, dan struktur database.",
+        "Melakukan debugging, troubleshooting, serta optimalisasi performa aplikasi.",
+        "Menyusun dokumentasi teknis dan diagram desain sistem.",
+        "Melaksanakan pengujian sistem, termasuk System Integration Testing (SIT), User Acceptance Testing (UAT), serta mendukung pengujian keamanan aplikasi.",
+        "Mengelola kode program menggunakan version control Git.",
+        "Berkolaborasi dengan tim terkait untuk memastikan aplikasi berjalan sesuai kebutuhan bisnis dan standar teknis."
+      ]
+    },
+    "staff-it-jobstreet": {
+      "position": "Staff IT",
+      "company": "PT Karya Unggulan Cemerlang (TSH Group)",
+      "location": "Kutai Barat, Kalimantan Timur",
+      "required_skills": [
+        "Instalasi",
+        "network point to point",
+        "fortigate firewall",
+        "VPN",
+        "IT support",
+        "hardware",
+        "software",
+        "networking",
+        "KONFIGURASI FORTIGATE",
+        "CISCO",
+        "MICROTIK FIREWALL",
+        "Internet of things",
+        "Network",
+        "Laptop",
+        "PC",
+        "Printer"
+      ],
+      "preferred_skills": [
+        "Inggris"
+      ],
+      "education_level": "s1",
+      "education_fields": [
+        "ilmu computer",
+        "teknologi informasi"
+      ],
+      "min_experience_years": 2.0,
+      "responsibilities": [
+        "Merancang dan melakukan instalasi network point to point.",
+        "Melakukan konfigurasi fortigate firewall, Setting VPN.",
+        "Melakukan IT support (hardware, software, networking)",
+        "Berkoordinasi dengan vendor atau ISP mengenai gangguan yang terjadi."
+      ]
+    },
+    "support-engineer-linkedin": {
+      "position": "Jr. Support Engineer",
+      "company": "NTT Data",
+      "location": "Jakarta Selatan - Kuningan",
+      "required_skills": [
+        "information technology",
+        "Business",
+        "Atlassian",
+        "JIRA",
+        "Confluence",
+        "Github",
+        "Java Development",
+        "SQL",
+        "AI Prompting",
+        "analytical",
+        "Linux",
+        "Windows",
+        "Google Cloud Platform",
+        "postman",
+        "postqresql",
+        "SQL Server",
+        "problem-solving"
+      ],
+      "preferred_skills": [],
+      "education_level": "s1",
+      "education_fields": [
+        "information technology",
+        "Business"
+      ],
+      "min_experience_years": 1.0,
+      "responsibilities": [
+        "Support monitoring and maintain application",
+        "Diagnosis and Investigation any issue occurs",
+        "Communicate incident to stakeholders",
+        "Resolution and recovery any issue occurs"
+      ]
+    },
+    "technical-system-jobstreet": {
+      "position": "Technical System Analyst",
+      "company": "FinShot, Inc.",
+      "location": "Jakarta Selatan, Jakarta Raya",
+      "required_skills": [
+        "software development",
+        "backend language",
+        "FSD",
+        "TSD",
+        "API specifications",
+        "BRDs",
+        "English",
+        "Bahasa Indonesia"
+      ],
+      "preferred_skills": [
+        "Fintech",
+        "payments",
+        "banking",
+        "lending",
+        "System Analyst",
+        "Technical Business Analyst",
+        "Java",
+        "Spring"
+      ],
+      "education_level": null,
+      "education_fields": [],
+      "min_experience_years": 2.0,
+      "responsibilities": [
+        "70% Writing English specifications: turn a rough requirement into a specification a developer can implement without further questions (flows, states, API contracts, data changes, error and failure cases, acceptance criteria).",
+        "20% Reading and checking code: see how things work now, find what a change will affect, and check that the implementation matches the specification.",
+        "10% Supporting developers: answer questions about your specifications and update them when something changes."
+      ]
+    }
+  }
+}

@@ -1,0 +1,32 @@
+Data Engineer (Credit) - Sea Labs
+Experienced (Individual Contributor)
+Jakarta
+About Monee
+Monee is a leading digital payments and financial services provider in Southeast Asia, with a growing presence in Latin America. Its mission is to better the lives of individuals and businesses in the region with financial services through technology.
+
+Monee delivers a comprehensive range of digital financial products and services, including mobile wallets, payment processing, credit, banking, and insurtech. By leveraging technology and strategic partnerships, Monee aims to drive greater digital financial inclusion, convenience, and accessibility for individuals and small businesses across Southeast Asia and Latin America.
+
+Monee is part of Sea Limited, a global technology company.
+
+About the Team
+Monee is a leading digital payments and financial services provider in Southeast Asia, with a growing presence in Latin America. Monee delivers a comprehensive range of digital financial products and services, including mobile wallets, payment processing, credit, banking, and insurtech. 
+
+ 
+
+At Monee, engineers work directly on our core business, product innovation, and infrastructure. We help turn proven capabilities into platforms that can scale, while also building new markets, products, and financial services from the ground up.
+
+ 
+
+Our financial business operates across multiple markets at scale, bringing complex, real-world engineering challenges—from high-throughput systems and safeguarding funds to global architecture and regulatory compliance. It also creates ample room for engineering innovation in the age of AI. We’re looking for talented engineers with strong fundamentals, a passion for learning, and a curiosity about solving complex problems.
+
+Job Description
+Develop, optimize, and maintain batch and real-time feature pipelines using Spark/Flink.
+Design, build, and maintain business Data Marts, including data modeling, ETL development, and performance optimization.
+Ensure data quality, accuracy, and pipeline reliability, continuously improving data processing efficiency.
+Collaborate with DS, policy, risk and business teams to support feature engineering and data requirements.
+Requirements
+3+ years of experience in data engineering or big data development, with strong SQL and Python/Scala/Java skills.
+Hands-on experience with Spark/Flink for batch or stream processing.
+Solid understanding of data warehousing, dimensional modeling, and Data Mart development.
+Familiarity with big data technologies such as Kafka, Hive, and Airflow.
+Preferred Qualifications: Experience with Feature Engineering, Feature Stores, or data/feature platforms.

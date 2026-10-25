@@ -1,0 +1,120 @@
+Technical System Analyst
+
+FinShot, Inc. 
+Lihat semua lowongan kerja
+Jakarta Selatan, Jakarta Raya
+Analis Bisnis/Sistem (Teknologi Informasi & Komunikasi)
+Full time
+Rp 9.000.000 – Rp 13.000.000 per month
+Diposting 5 hari yang lalu
+Pelamar sangat banyak
+
+Bagaimana Anda cocok
+Kecocokan berdasarkan riwayat karir Anda
+Pengembangan Software
+
+API
+
+Bahasa Indonesia
+
+Tampilkan semua⁠
+About Finshot
+Finshot is a licensed cross-border remittance company. We hold remittance and electronic payment licences in Korea and a funds transfer licence in Japan, and we move real money for real customers every day. Our product and development teams are in Korea, and our development team in Jakarta is growing.
+
+
+
+What we are building
+Integrations with overseas remittance partners, card networks, and securities firms
+
+B2B cross-border payments across Korea and Japan
+
+AML and compliance systems
+
+
+
+About the role
+You turn requirements from our Korea team into English specifications that our Jakarta developers can build from. Requirements from Korea are often rough. Your job is to find what they do not say, ask the right questions, and close the gaps before development starts. You use your development background to read the code, understand how the system works today, and write specifications that fit it. This is a hands-on analyst role. You will not manage people, and you will not be assigned feature development.
+
+What you will do
+70% Writing English specifications: turn a rough requirement into a specification a developer can implement without further questions (flows, states, API contracts, data changes, error and failure cases, acceptance criteria).
+
+20% Reading and checking code: see how things work now, find what a change will affect, and check that the implementation matches the specification.
+
+10% Supporting developers: answer questions about your specifications and update them when something changes.
+
+Requirements
+2+ years of hands-on software development (any backend language)
+
+2+ years in which writing specifications was a main part of your job (FSD, TSD, API specifications, or BRDs that developers actually built from)
+
+Experience working with an external system you did not control; you understand retries, timeouts, idempotency, and reconciliation
+
+Clear written English. Simple, short sentences are what we want
+
+Native or fluent Bahasa Indonesia
+
+Able to work on-site at our Jakarta office every day
+
+When a requirement is vague, your instinct is to ask rather than to guess
+
+Nice to have
+Fintech, payments, banking, or lending background
+
+Experience as a System Analyst or Technical Business Analyst
+
+Experience mentoring or leading developers
+
+Experience working with an overseas head office
+
+Able to read Java/Spring code
+
+
+
+Not required
+Korean language.
+
+
+
+Benefits
+THR of one month's base salary
+
+BPJS Kesehatan and BPJS Ketenagakerjaan from your first day
+
+
+
+Hiring process
+Resume screening
+
+Short email check
+
+Take-home assignment: a small Java codebase and a vague change request
+(you write the questions and the specification in English)
+
+Technical interview in English: about 100 minutes in two parts on Google Meet.
+Part 1 (15–20 minutes) is a conversation about your experience.
+Part 2 covers your assignment, reading code you have not seen before, and writing a short specification for a new requirement during the session.
+
+Final interview
+
+Offer
+
+
+
+We pay for your time
+Assignment fee IDR 400,000
+
+Interview fee IDR 400,000
+
+*Interview fee is offered only to candidates who pass Part 1. The interview fee is paid when Interview is completed.
+
+*Fees are not paid if you withdraw or stop responding before the stage is complete, or if your submission is not a genuine attempt at the task. A genuine attempt answers the change request with your own questions and specification. Submissions that are mostly empty, off-topic, or AI output pasted without review do not count.
+
+
+
+AI tools and recording
+AI tools are allowed in the take-home assignment. Please tell us how you used them, and be ready to explain every decision in your submission during the interview. The live interview is done without AI tools. Our live sessions are recorded. Your consent is confirmed at the start of each session. Recordings are used only for this hiring decision and are deleted after the process closes.
+
+
+
+Office
+23rd Floor, Menara Prima Building, Jl. DR. Ide Anak Agung Gde Agung, Kuningan, South Jakarta 12950, Indonesia

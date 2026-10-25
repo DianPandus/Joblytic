@@ -1,0 +1,54 @@
+Power BI / Dashboard Developer
+
+PT Kinarya Alihdaya Mandiri 
+4.2
+Lihat semua lowongan kerja
+Jakarta Selatan, Jakarta Raya
+Developer/Programmer (Teknologi Informasi & Komunikasi)
+Kontrak/Temporer
+Rp 7.000.000 – Rp 7.600.000 per month
+Diposting 7 hari yang lalu
+Pelamar sangat banyak
+
+Bagaimana Anda cocok
+Kecocokan berdasarkan riwayat karir Anda
+Analisis
+
+Teknik Informatika
+
+Pemantauan
+
+Analisa Data
+
++2 selengkapnya⁠
+Requirement:
+
+Pendidikan Minimal S1 Jurusan Teknik Informatika, sistem informasi.
+
+Mahir menggunakan Microsoft Power BI (Power BI Desktop & Service).
+
+Memiliki pemahaman yang kuat mengenai visualisasi data, desain dashboard, dan pemantauan KPI.
+
+Berpengalaman dalam pemodelan data, rumus DAX, dan Power Query (ETL).
+
+Mampu mengintegrasikan berbagai sumber data (Excel, SQL Database, API).
+
+Memiliki pengetahuan tentang SQL, analisis data, dan validasi data.
+
+Mampu menerjemahkan kebutuhan bisnis menjadi wawasan yang dapat ditindaklanjuti (*actionable insights*) dan dashboard interaktif.
+
+
+
+Jobdesc:
+
+Mengembangkan dan memelihara dashboard kinerja bisnis yang interaktif menggunakan Power BI.
+
+Merancang sistem pemantauan KPI, pelaporan, dan analitik kinerja.
+
+Mengintegrasikan, mentransformasi, dan memvalidasi data dari berbagai sumber.
+
+Mengotomatisasi proses pelaporan untuk meningkatkan efisiensi dan akurasi.
+
+Berkolaborasi dengan team untuk kepentingan bisnis untuk mengidentifikasi kebutuhan reporting.
+
+Menyediakan insight berbasis data untuk mendukung pengambilan keputusan manajemen.

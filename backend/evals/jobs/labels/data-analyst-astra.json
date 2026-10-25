@@ -1,0 +1,40 @@
+{
+  "verified": true,
+  "position": "Data Analyst - AID",
+  "company": "Astra Financial - Sedaya Multi Investama",
+  "location": null,
+  "required_skills": [
+    "machine learning",
+    "predictive modeling",
+    "SQL",
+    "Big Data",
+    "data warehouse",
+    "exploratory data analysis (EDA)",
+    "Artificial Intelligence (AI)",
+    "Generative AI (GenAI)",
+    "feature engineering"
+  ],
+  "preferred_skills": [
+    "Power BI",
+    "Tableau"
+  ],
+  "education_level": "s1",
+  "education_fields": [
+    "Data Science",
+    "Ilmu Komputer",
+    "Teknologi Informasi",
+    "Matematika",
+    "Statistika"
+  ],
+  "min_experience_years": 0.0,
+  "responsibilities": [
+    "Menganalisis kebutuhan bisnis dari pengguna atau unit bisnis dan menerjemahkannya ke dalam pendekatan analisis data.",
+    "Mengeksplorasi dan menganalisis data untuk mengidentifikasi pola, tren, dan insight utama.",
+    "Menyiapkan, mengelola, dan mengembangkan dataset serta model analisis (data cleaning, transformasi, standardisasi, evaluasi, dan fine-tuning) sesuai dengan kebutuhan pengguna.",
+    "Menyampaikan insight dan rekomendasi kepada unit bisnis dan manajemen untuk mendukung pengambilan keputusan.",
+    "Melaksanakan UAT (User Acceptance Testing), memberikan dukungan pada proses deployment bersama pengguna, serta mendokumentasikan hasil analisis.",
+    "Menganalisis tingkat akurasi model data secara berkala dan melakukan fine-tuning apabila diperlukan.",
+    "Merancang dan menyajikan visualisasi data serta dashboard yang informatif sesuai dengan kebutuhan pengguna.",
+    "Memastikan dokumentasi administrasi tersusun dengan baik serta menyusun standardisasi aturan dan prosedur formal."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "verified": true,
+  "position": "Software Engineer - GSI",
+  "company": "PT Global Service Indonesia",
+  "location": null,
+  "required_skills": [
+    "C#",
+    ".NET 5",
+    "Microsoft SQL Server",
+    "API",
+    "debugging",
+    "diagram desain sistem",
+    "System Integration Testing",
+    "User Acceptance Testing",
+    "Git",
+    "RDBMS",
+    "SQL",
+    "Query",
+    "DML",
+    "DDL",
+    "JavaScript",
+    "penetration testing"
+  ],
+  "preferred_skills": [
+    "jQuery",
+    "Telerik Kendo UI",
+    "Keycloak",
+    "Redis",
+    "Elasticsearch",
+    "Kubernetes"
+  ],
+  "education_level": "s1",
+  "education_fields": [
+    "Teknik Informatika",
+    "Ilmu Komputer",
+    "Rekayasa Perangkat Lunak"
+  ],
+  "min_experience_years": 3.0,
+  "responsibilities": [
+    "Mengembangkan, memelihara, dan meningkatkan aplikasi menggunakan C# dan .NET 5 atau versi lebih baru.",
+    "Mengembangkan dan mengintegrasikan API untuk mendukung kebutuhan aplikasi dan sistem.",
+    "Mengelola database menggunakan Microsoft SQL Server, termasuk pembuatan query, pengolahan data, dan struktur database.",
+    "Melakukan debugging, troubleshooting, serta optimalisasi performa aplikasi.",
+    "Menyusun dokumentasi teknis dan diagram desain sistem.",
+    "Melaksanakan pengujian sistem, termasuk System Integration Testing (SIT), User Acceptance Testing (UAT), serta mendukung pengujian keamanan aplikasi.",
+    "Mengelola kode program menggunakan version control Git.",
+    "Berkolaborasi dengan tim terkait untuk memastikan aplikasi berjalan sesuai kebutuhan bisnis dan standar teknis."
+  ]
+}

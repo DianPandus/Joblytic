@@ -1,0 +1,24 @@
+Backend Developer - Java - ADMO
+PT Astra Digital Mobil
+
+  Information Technology
+
+  Lulusan Baru & Profesional
+
+ Batas Lamar: 31 Desember 2026
+
+Deskripsi Pekerjaan
+Employment Status: Contract-based
+
+Mengembangkan dan memelihara server dan backend menggunakan Java untuk mendukung fungsi dan fitur dalam platform penjualan mobil bekas. 
+Merancang dan mengimplementasikan API (Application Programming Interface) yang efisien untuk memastikan komunikasi yang lancar antara frontend dan backend, serta dengan pihak-pihak eksternal seperti sistem pembayaran dan penyedia layanan lainnya. 
+Menjalankan pengujian dan debugging secara rutin untuk memastikan keamanan, stabilitas, dan skalabilitas dari aplikasi server menggunakan Node.js. 
+Mengoptimalkan kinerja aplikasi dan server, serta melakukan pemantauan untuk mengidentifikasi dan mengatasi masalah performa guna memberikan pengalaman yang lebih baik kepada pengguna
+Persyaratan
+Gelar Sarjana dari jurusan Teknik Informatika/Sistem Informasi/Teknik Komputer/Manajemen Informatika atau bidang terkait dari universitas terkemuka dengan IPK minimal 3,00. 
+Minimal 2 tahun pengalaman kerja secara keseluruhan dan pengetahuan mengenai pengembangan backend dan programming (Java).
+Lebih disukai jika memiliki kompetensi dalam Bahasa Pemrograman lain (Node.JS / PHP / Golang / etc).
+Memiliki kompetensi dalam JavaSpring / Springboot, PostgreSQL / mySQL database, Object-Oriented Programming, SDLC Scrum, Unit Testing / Design Pattern / Code Convention, Message Broker (Kafka / RabbitMQ), AWS Cloud, API Contract, Docker / Kubernetes, CI/CD.
+Kemampuan code review.
+Kemampuan problem-solving, interpersonal, dan analisis yang kuat. 
+Bersedia bekerja di kantor (lokasi: Jakarta)

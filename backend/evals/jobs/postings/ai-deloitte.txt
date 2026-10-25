@@ -1,0 +1,116 @@
+T&T Consultant - Artificial Intelligence & Data (Data Engineer) - ID 
+
+Jakarta Metropolitan Area · Reposted 2 weeks ago · Over 100 people clicked apply
+
+Promoted by hirer · Responses managed off LinkedIn
+
+On-site
+Full-time
+
+Apply
+
+Save
+Your profile and resume are missing some required qualifications
+
+
+
+Show match details
+
+BETA • Is this information helpful?
+
+
+Get personalized tips to stand out to hirers
+
+Find jobs where you’re a top applicant and tailor your resume with the help of AI.
+
+Try Premium for Rp 0
+
+People you can reach out to
+
+
+
+
+Show all
+About the job
+Date: 24 Sept 2026
+
+Service Line / Portfolios: Engineering, AI & Data
+
+Location:
+
+Jakarta, ID
+
+Are you ready to unleash your potential?
+
+At Deloitte, our purpose is to make an impact that matters for our clients, our people, and the communities we serve.
+
+We believe we have a responsibility to be a force for good, and WorldImpact is our portfolio of initiatives focused on making a tangible impact on society’s biggest challenges and creating a better future. We strive to advise clients on how to deliver purpose-led growth and embed more equitable, inclusive as well as sustainable business practices.
+
+Hence, we seek talented individuals driven to excel and innovate, working together to achieve our shared goals.
+
+We are committed to creating positive work experiences that foster a culture of respect and inclusion, where diverse perspectives are celebrated, and everyone is recognised for their contributions.
+
+Ready to unleash your potential with us? Join the winning team now!
+
+Work you’ll do:
+
+This role sits within the Artificial Intelligence & Data team of Deloitte Southeast Asia, which encompasses data, analytics and intelligent automation (IA). As a leader of this group, you will drive the growth of our IA business in the region and be responsible for the creation, sale and delivery of IA solutions: robotic process automation, intelligent character recognition, chatbots/virtual assistants and artificial intelligence.
+
+The Artificial Intelligence & Data team leverages the power of data, analytics, robotics, science and cognitive technologies to uncover hidden relationships from vast troves of data, generate insights, and inform decision-making. We help clients transform their business by architecting organizational intelligence programs and differentiated strategies to win in their chosen markets.
+
+ Apply emerging technologies to help our clients maximize the value of their data by generating actionable insights that provide real business outcomes. 
+ Designing and implementing data structures to support Big Data, Analytical models and traditional BI/DW reporting solutions using technologies such as Microsoft SQL, Oracle, SAP, Cloudera, IBM Watsons, MuleSoft, Qlik Technologies or Informatica. 
+ Designing and developing data integration using Data Governance, Data Quality, MDM and Metadata management. 
+ Applying analytical models to predict business outcomes with tools such as DataRobot and languages like Python or R. 
+ You will be part of a collaborative team that provides our clients with solutions that are practical as well as visionary and have an impact from the back office to the boardroom. 
+ Demonstrated experience across a broad range of industries such as Energy and Resources, Public Sector, Financial Services, Life Sciences and Health Care, Consumer Business, Manufacturing, Telecommunications or Consumer Business. 
+ Ability to link industry specific business requirements to BI, Analytics and Big Data solutions. 
+ Ability to recommend BI/DW/Analytics processes, governance, organisational and platform models, tool selections, and data integration options to clients. 
+ Project experience through all phases of the project lifecycle from strategy and advisory, scoping and planning, requirements gathering, design, development, testing, training and deployment. 
+
+Your role as a leader:
+
+At Deloitte, we believe in the importance of empowering our people to be leaders at all levels. We connect our purpose and shared values to identify issues as well as to make an impact that matters to our clients, people and the communities. Additionall y, Consultant ac ross our Firm are expected to:
+
+ Actively seek out developmental opportunities for growth, act as strong brand ambassadors for the firm as well as share their knowledge and experience with others. 
+ Respect the needs of their colleagues and build up cooperative relationships. 
+ Understand the goals of our internal and external stakeholder to set personal priorities as well as align their teams’ work to achieve the objectives. 
+ Constantly challenge themselves, collaborate with others to deliver on tasks and take accountability for the results. 
+ Build productive relationships and communicate effectively in order to positively influence teams and other stakeholders. 
+ Offer insights based on a solid understanding of what makes Deloitte successful. 
+ Project integrity and confidence while motivating others through team collaboration as well as recognising individual strengths, differences, and contributions. 
+ Understand disruptive trends and promote potential opportunities for improvement. 
+
+Requirements:
+
+ A good honors Degree, preferably at postgraduate level, in Computer Science, Software Engineering, Statistics, Mathematics or related disciplines. 
+ Experience in Big 4 or MNC Consulting firm or industry equivalent role. 
+ Minimum 2 years (Analyst) or 4 years (Consultant) of relevant experience. 
+ Strong experience in one or more of the following programming languages: Scala, Python, or R. 
+ Experience with one or more non-relational data stores such as Pivotal, Cloudera, Hortonworks, MapR, Oracle BDA. 
+ Experience with one or more relational data stores using SQL, Oracle DB, Microsoft SQL Server, IBM Netezza, Teradata or MySQL. 
+ Experience building data ingestion and transformation pipelines using Big Data technologies, including one or more of the following: Spark, Hive, Pig, Kafka, MapReduce, HBase, Sqoop, Flume or Storm. 
+ Experience in cloud Data Engineering 
+ Experience working with Agile software engineering tools and applying Agile methodologies in a pragmatic manner. 
+ Experience working with Source Control Management tools such as Git, Subversion or Mercurial. 
+ General knowledge of Linux/Unix based operating systems and Shell scripting. 
+ Experience directly interfacing with business and IT stakeholders for clients. 
+ Excellent problem solving skills, ability to think out-of-the-box, work under pressure and tight project timelines. 
+ Drive, tenacity, client focused and results oriented. 
+ Excellent communication and presentation skills in English. 
+
+In addition to strong client service orientation, we are also seeking talented leaders who have the capability to deliver quality solutions with superior analytical and problem solving skills. Besides excellent interpersonal and communication skills, candidates should have proven demonstration of sound business acumen, teamwork and leadership qualities. An appreciation of the consulting lifestyle and ability to travel is a pre-requisite.
+
+Due to volume of applications, we regret that only shortlisted candidates will be notified.
+
+ Please note that Deloitte will never reach out to you directly via messaging platforms to offer employment opportunities or request money, bank account details, passwords, one-time passwords (OTPs), or other sensitive personal information. 
+
+ If you receive a suspicious communication claiming to be from Deloitte, please verify its authenticity through our official channels before taking any action. 
+
+ Apply only for roles listed on the official Deloitte careers website, as all legitimate Deloitte career opportunities are published exclusively through this channel. 
+
+ Shortlisted candidates will only be contacted through official Deloitte email addresses ending with @deloitte.com . 
+
+Requisition ID: 110573
+
+In Indonesia, the services are provided by Imelda & Rekan and other related entities in Indonesia ("Deloitte in Indonesia"), which are affiliates of Deloitte Southeast Asia Ltd. Deloitte Southeast Asia Ltd is a member firm of Deloitte Touche Tohmatsu Limited. Deloitte in Indonesia, which is within the Deloitte Network, is the entity that is providing this Website.

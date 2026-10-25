@@ -171,7 +171,7 @@ def test_extract_saves_grounded_posting_and_logs_usage(jobs_client):
     row = jobs_client.state["inserted"]
     assert row["required_skills"] == ["SQL", "Python", "Power BI", "Tableau"]
     assert row["extracted"]["position"] == "Data Analyst"
-    assert row["prompt_version"] == "job-extract-v1" and row["llm_model"] == "fake-model"
+    assert row["prompt_version"] == "job-extract-v5" and row["llm_model"] == "fake-model"
     assert len(row["text_hash"]) == 64
     assert [u["status"] for u in jobs_client.state["usage"]] == ["ok"]
 

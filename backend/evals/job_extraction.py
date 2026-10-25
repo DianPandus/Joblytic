@@ -31,8 +31,16 @@ POSTINGS, LABELS, RESULTS = ROOT / "postings", ROOT / "labels", ROOT / "results"
 
 SCALAR_FIELDS = ["position", "company", "location", "education_level", "min_experience_years"]
 LIST_FIELDS = ["required_skills", "preferred_skills", "education_fields", "responsibilities"]
+FUZZY_FIELDS = {"required_skills", "preferred_skills", "responsibilities"}
 FIELDS = SCALAR_FIELDS + LIST_FIELDS
 TARGET = 0.9
+
+# Kata pengantar yang tidak mengubah skill-nya ("Strong analytical skills" = "analytical").
+# Sengaja tanpa "basic" dan "solid" (Visual Basic, SOLID).
+SKILL_FILLER = {
+    "good", "strong", "excellent", "fluent", "proficiency", "proficient",
+    "skill", "skills", "kemampuan", "keterampilan", "mahir",
+}  # fmt: skip
 
 
 # --- Pencocokan ----------------------------------------------------------------
@@ -52,9 +60,27 @@ def scalar_match(predicted, expected) -> bool:
     return norm(predicted) == norm(expected)
 
 
+def _strip_filler(text: str) -> str:
+    kept = [w for w in text.split() if w not in SKILL_FILLER]
+    return " ".join(kept) or text
+
+
+def _is_acronym(short: str, long: str) -> bool:
+    """True bila `short` adalah singkatan `long`, mis. "uat" dan "user acceptance testing"."""
+    words = long.split()
+    return " " not in short and len(words) >= 2 and short == "".join(w[0] for w in words)
+
+
 def _same_item(a: str, b: str, fuzzy: bool) -> bool:
     a, b = norm(a), norm(b)
-    return a == b or (fuzzy and SequenceMatcher(None, a, b).ratio() >= 0.85)
+    if a == b:
+        return True
+    if not fuzzy:
+        return False
+    a, b = _strip_filler(a), _strip_filler(b)
+    if _is_acronym(a, b) or _is_acronym(b, a):
+        return True
+    return a == b or SequenceMatcher(None, a, b).ratio() >= 0.85
 
 
 def list_counts(predicted: list[str], expected: list[str], fuzzy: bool) -> tuple[int, int, int]:
@@ -91,7 +117,7 @@ def score(cases: list[tuple[str, dict, dict]]) -> dict:
         totals = [0, 0, 0]
         wrong = []
         for name, pred, label in cases:
-            counts = list_counts(pred[field], label[field], fuzzy=field == "responsibilities")
+            counts = list_counts(pred[field], label[field], fuzzy=field in FUZZY_FIELDS)
             totals = [t + c for t, c in zip(totals, counts, strict=True)]
             if counts[0] != counts[1] or counts[0] != counts[2]:
                 wrong.append(name)
@@ -120,6 +146,16 @@ def _label_path(posting: Path) -> Path:
 async def _extract(llm, posting: Path) -> dict:
     text = validate_text(posting.read_text(encoding="utf-8"))
     return (await extract_job(llm, text)).fields
+
+
+async def _extract_with_retry(llm, posting: Path, delay: float) -> dict:
+    """Gemini gratis kadang sibuk atau kena batas per menit; coba sekali lagi setelah jeda."""
+    try:
+        return await _extract(llm, posting)
+    except LLMError as exc:
+        print(f"  {posting.name}: {exc}, dicoba ulang")
+        await asyncio.sleep(delay * 3)
+        return await _extract(llm, posting)
 
 
 async def draft(delay: float) -> None:
@@ -156,15 +192,15 @@ async def run(delay: float) -> None:
     if not labelled:
         sys.exit("Belum ada label terverifikasi di evals/jobs/labels/.")
 
-    cases, failures = [], []
+    cases, failures = [], {}
     for i, (posting, label) in enumerate(labelled):
         if i:
             await asyncio.sleep(delay)
         try:
-            cases.append((posting.stem, await _extract(llm, posting), label))
+            cases.append((posting.stem, await _extract_with_retry(llm, posting, delay), label))
             print(f"  {posting.name}: ok")
         except (LLMError, JobError) as exc:
-            failures.append(posting.stem)
+            failures[posting.stem] = str(exc)
             print(f"  {posting.name}: GAGAL ({exc})")
     if not cases:
         sys.exit("Semua ekstraksi gagal.")

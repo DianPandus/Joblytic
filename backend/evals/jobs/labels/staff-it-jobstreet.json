@@ -1,0 +1,36 @@
+{
+  "verified": true,
+  "position": "Staff IT",
+  "company": "PT Karya Unggulan Cemerlang (TSH Group)",
+  "location": "Kutai Barat, Kalimantan Timur",
+  "required_skills": [
+    "IT Technical Support",
+    "Hardware",
+    "network point to point",
+    "VPN",
+    "software",
+    "networking",
+    "Fortigate",
+    "CISCO",
+    "MICROTIK",
+    "Internet of things (IOT)",
+    "Laptop",
+    "PC",
+    "Printer"
+  ],
+  "preferred_skills": [
+    "Bahasa Inggris"
+  ],
+  "education_level": "s1",
+  "education_fields": [
+    "ilmu computer",
+    "teknologi informasi"
+  ],
+  "min_experience_years": 2.0,
+  "responsibilities": [
+    "Merancang dan melakukan instalasi network point to point.",
+    "Melakukan konfigurasi fortigate firewall, Setting VPN.",
+    "Melakukan IT support (hardware, software, networking)",
+    "Berkoordinasi dengan vendor atau ISP mengenai gangguan yang terjadi."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "verified": true,
+  "position": "Data Visualization - AID",
+  "company": "Astra Financial - Sedaya Multi Investama",
+  "location": null,
+  "required_skills": [
+    "visualisasi data",
+    "dashboard",
+    "SQL",
+    "analisis data",
+    "Big Data"
+  ],
+  "preferred_skills": [],
+  "education_level": "s1",
+  "education_fields": [
+    "Data Science",
+    "Ilmu Komputer",
+    "Teknologi Informasi",
+    "Matematika",
+    "Statistika"
+  ],
+  "min_experience_years": 1.0,
+  "responsibilities": [
+    "Menganalisis kebutuhan bisnis dari pengguna/unit bisnis dan menerjemahkannya ke dalam pendekatan analisis data.",
+    "Mengeksplorasi dan menganalisis data untuk mengidentifikasi pola, tren, dan insight utama.",
+    "Menyiapkan dan mengelola dataset untuk analisis, termasuk pembersihan, transformasi, dan standardisasi data.",
+    "Menyiapkan, mengelola, dan mengembangkan dataset untuk menghasilkan insight dan mengembangkan dashboard.",
+    "Menyampaikan insight dan rekomendasi kepada unit bisnis dan manajemen untuk mendukung pengambilan keputusan.",
+    "Melaksanakan UAT, memberikan dukungan implementasi bersama pengguna, serta mendokumentasikan hasil analisis.",
+    "Menjaga dokumentasi yang terstruktur dan menetapkan aturan formal yang terstandardisasi."
+  ]
+}

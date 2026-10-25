@@ -1,0 +1,39 @@
+{
+  "verified": true,
+  "position": "Power BI / Dashboard Developer",
+  "company": "PT Kinarya Alihdaya Mandiri",
+  "location": "Jakarta Selatan, Jakarta Raya",
+  "required_skills": [
+    "Microsoft Power BI",
+    "Power BI Desktop",
+    "Power BI Service",
+    "visualisasi data",
+    "desain dashboard",
+    "pemantauan KPI",
+    "pemodelan data",
+    "rumus DAX",
+    "Power Query",
+    "ETL",
+    "Excel",
+    "SQL Database",
+    "API",
+    "SQL",
+    "analisis data",
+    "validasi data"
+  ],
+  "preferred_skills": [],
+  "education_level": "s1",
+  "education_fields": [
+    "Teknik Informatika",
+    "sistem informasi"
+  ],
+  "min_experience_years": null,
+  "responsibilities": [
+    "Mengembangkan dan memelihara dashboard kinerja bisnis yang interaktif menggunakan Power BI.",
+    "Merancang sistem pemantauan KPI, pelaporan, dan analitik kinerja.",
+    "Mengintegrasikan, mentransformasi, dan memvalidasi data dari berbagai sumber.",
+    "Mengotomatisasi proses pelaporan untuk meningkatkan efisiensi dan akurasi.",
+    "Berkolaborasi dengan team untuk kepentingan bisnis untuk mengidentifikasi kebutuhan reporting.",
+    "Menyediakan insight berbasis data untuk mendukung pengambilan keputusan manajemen."
+  ]
+}

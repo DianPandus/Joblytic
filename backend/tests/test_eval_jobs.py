@@ -29,6 +29,17 @@ def test_list_counts_pairs_each_label_once_and_fuzzy_only_when_asked():
     assert list_counts(["Power BI"], ["Tableau"], fuzzy=True)[0] == 0
 
 
+def test_fuzzy_skill_match_ignores_filler_words_only():
+    assert list_counts(["Good analytical skills"], ["analytical"], fuzzy=True)[0] == 1
+    assert list_counts(["Fluent English"], ["English"], fuzzy=True)[0] == 1
+    assert list_counts(["SQL"], ["MySQL"], fuzzy=True)[0] == 0
+    assert list_counts(["Java"], ["JavaScript"], fuzzy=True)[0] == 0
+    assert list_counts(["Visual Basic"], ["Visual"], fuzzy=True)[0] == 0
+    assert list_counts(["UAT"], ["User Acceptance Testing"], fuzzy=True)[0] == 1
+    assert list_counts(["SQL"], ["Structured Data"], fuzzy=True)[0] == 0
+    assert list_counts(["Good analytical skills"], ["analytical"], fuzzy=False)[0] == 0
+
+
 def test_f1_treats_both_empty_as_correct():
     assert f1(0, 0, 0) == 1.0
     assert f1(0, 1, 0) == 0.0

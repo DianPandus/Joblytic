@@ -1,0 +1,37 @@
+{
+  "verified": true,
+  "position": "BUSINESS ANALYST INTERNATIONAL DIVISION",
+  "company": "PT Bahana Inovasi Adikarya",
+  "location": "Jakarta Raya",
+  "required_skills": [
+    "data management",
+    "trend analysis",
+    "reporting",
+    "forecasting",
+    "Excel"
+  ],
+  "preferred_skills": [
+    "business/sales analysis",
+    "commercial planning",
+    "market research",
+    "FMCG"
+  ],
+  "education_level": "s1",
+  "education_fields": [
+    "Business",
+    "Economics",
+    "Statistics",
+    "Finance",
+    "Management"
+  ],
+  "min_experience_years": 0.0,
+  "responsibilities": [
+    "Business Analysis & Forecasting: Analyze sales, product movement, pricing, distribution, and market trends; develop forecasts and projections.",
+    "Performance Monitoring: Track sales targets, distribution coverage, and KPIs; identify gaps, risks, and growth opportunities, and recommend actions.",
+    "Market Intelligence: Monitor competitors, consumer behavior, and market dynamics to support commercial strategies and expansion.",
+    "Field Engagement: Visit markets and outlets, interact with consumers, observe distribution activities, and validate data with firsthand insights.",
+    "Distributor Collaboration: Communicate confidently with distributors, review performance, identify challenges, and follow up on action plans.",
+    "Reporting & Presentation: Prepare reports and presentations that translate data into clear insights, projections, and recommendations.",
+    "Cross-functional Collaboration: Coordinate with international sales, marketing, supply chain, and other teams to support business planning and execution."
+  ]
+}

@@ -1,0 +1,26 @@
+Data Visualization - AID
+Astra Financial - Sedaya Multi Investama
+
+  Data and Statistics
+
+  Lulusan Baru & Profesional
+
+ Batas Lamar: 31 Desember 2026
+
+Deskripsi Pekerjaan
+Menganalisis kebutuhan bisnis dari pengguna/unit bisnis dan menerjemahkannya ke dalam pendekatan analisis data.
+Mengeksplorasi dan menganalisis data untuk mengidentifikasi pola, tren, dan insight utama.
+Menyiapkan dan mengelola dataset untuk analisis, termasuk pembersihan, transformasi, dan standardisasi data.
+Menyiapkan, mengelola, dan mengembangkan dataset untuk menghasilkan insight dan mengembangkan dashboard.
+Menyampaikan insight dan rekomendasi kepada unit bisnis dan manajemen untuk mendukung pengambilan keputusan.
+Melaksanakan UAT, memberikan dukungan implementasi bersama pengguna, serta mendokumentasikan hasil analisis.
+Menjaga dokumentasi yang terstruktur dan menetapkan aturan formal yang terstandardisasi.
+Persyaratan
+Pendidikan minimal S1 di bidang Data Science, Ilmu Komputer, Teknologi Informasi, Matematika, Statistika, atau bidang kuantitatif terkait lainnya.
+Memiliki pengalaman 1-3 tahun dalam visualisasi data.
+Mampu menghasilkan insight dan mengembangkan dashboard.
+Menguasai SQL.
+Memiliki kemampuan analisis data yang kuat.
+Memiliki pemahaman yang baik mengenai Big Data.
+Memiliki kemampuan berpikir kritis dan kreatif yang kuat.
+Penempatan di Astra Integrasi Digital (AID).

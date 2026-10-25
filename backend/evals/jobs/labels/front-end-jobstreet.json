@@ -1,0 +1,23 @@
+{
+  "verified": true,
+  "position": "Front-End Developer",
+  "company": "PT Mitra Informatika",
+  "location": "Surabaya, Jawa Timur",
+  "required_skills": [
+    "OOP",
+    "HTML",
+    "CSS",
+    "Javascript"
+  ],
+  "preferred_skills": [
+    "Ext JS"
+  ],
+  "education_level": null,
+  "education_fields": [],
+  "min_experience_years": 1.0,
+  "responsibilities": [
+    "Design, develop, & maintain application's UI through consistent and secure approach",
+    "Test & perform code deployment to production environment",
+    "Modify & enhance current application Front-End to adapt to business requirement"
+  ]
+}

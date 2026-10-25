@@ -1,0 +1,31 @@
+{
+  "verified": true,
+  "position": "Fresh Graduate Business Analyst",
+  "company": "PT Amber Solusi Internasional",
+  "location": "Jakarta Raya",
+  "required_skills": [
+    "software development methodology",
+    "English",
+    "SIT",
+    "User Acceptance Testing"
+  ],
+  "preferred_skills": [],
+  "education_level": "s1",
+  "education_fields": [
+    "Information Systems",
+    "Computer Science"
+  ],
+  "min_experience_years": 0.0,
+  "responsibilities": [
+    "Actively involved in business requirement analysis/user stories",
+    "Meet with business users throughout the organization to understand their business objectives, technical challenges and data needs, and prepare functional design document",
+    "Leading review sessions with business users to review functional design",
+    "Develop and maintain system level artifacts, such as flow diagrams, process diagram, and current and proposed state diagrams",
+    "Intensive discussion with development team to ensure the development as per functional design",
+    "Doing application testing and SIT",
+    "Leading User Acceptance Testing",
+    "Leading End User Training",
+    "Write and maintain related project documentation",
+    "Manage postproduction support activities"
+  ]
+}

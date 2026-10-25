@@ -1,0 +1,33 @@
+{
+  "verified": true,
+  "position": "Technical System Analyst",
+  "company": "FinShot, Inc.",
+  "location": "Jakarta Selatan, Jakarta Raya",
+  "required_skills": [
+    "Bahasa Indonesia",
+    "software development",
+    "FSD",
+    "TSD",
+    "API specifications",
+    "English",
+    "BRD"
+  ],
+  "preferred_skills": [
+    "Fintech",
+    "payments",
+    "banking",
+    "lending",
+    "System Analyst",
+    "Technical Business Analyst",
+    "Java",
+    "Spring"
+  ],
+  "education_level": null,
+  "education_fields": [],
+  "min_experience_years": 2.0,
+  "responsibilities": [
+    "Writing English specifications: turn a rough requirement into a specification a developer can implement without further questions (flows, states, API contracts, data changes, error and failure cases, acceptance criteria).",
+    "Reading and checking code: see how things work now, find what a change will affect, and check that the implementation matches the specification.",
+    "Supporting developers: answer questions about your specifications and update them when something changes."
+  ]
+}

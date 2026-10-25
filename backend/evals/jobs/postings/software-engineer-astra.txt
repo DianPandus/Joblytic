@@ -1,0 +1,30 @@
+Software Engineer - GSI
+PT Global Service Indonesia
+
+  Information Technology
+
+  Profesional
+
+ Batas Lamar: 31 Desember 2026
+
+Deskripsi Pekerjaan
+Lowongan pekerjaan ini dipublikasikan melalui akun PT Global Service Indonesia. Kandidat terpilih akan menjadi karyawan PT Global Service Indonesia dengan penempatan di United Tractors Group (UT Group).
+
+Mengembangkan, memelihara, dan meningkatkan aplikasi menggunakan C# dan .NET 5 atau versi lebih baru.
+Mengembangkan dan mengintegrasikan API untuk mendukung kebutuhan aplikasi dan sistem.
+Mengelola database menggunakan Microsoft SQL Server, termasuk pembuatan query, pengolahan data, dan struktur database.
+Melakukan debugging, troubleshooting, serta optimalisasi performa aplikasi.
+Menyusun dokumentasi teknis dan diagram desain sistem.
+Melaksanakan pengujian sistem, termasuk System Integration Testing (SIT), User Acceptance Testing (UAT), serta mendukung pengujian keamanan aplikasi.
+Mengelola kode program menggunakan version control Git.
+Berkolaborasi dengan tim terkait untuk memastikan aplikasi berjalan sesuai kebutuhan bisnis dan standar teknis.
+Persyaratan
+Pendidikan minimal S1 Teknik Informatika, Ilmu Komputer, Rekayasa Perangkat Lunak, atau jurusan terkait.
+Memiliki pengalaman minimal 3 tahun dalam pengembangan software menggunakan C#, .NET 5 atau versi lebih baru, dan Microsoft SQL Server.
+Berpengalaman dalam pengembangan API, dokumentasi teknis, desain atau diagram sistem, SIT, UAT, dan penetration testing.
+Memahami konsep RDBMS serta SQL, termasuk Query, DML, dan DDL.
+Menguasai JavaScript. Pengalaman menggunakan jQuery dan Telerik Kendo UI menjadi nilai tambah.
+Memahami penggunaan version control, khususnya Git.
+Memiliki kemampuan problem-solving dan debugging yang baik.
+Pengalaman menggunakan Keycloak, Redis, Elasticsearch, atau Kubernetes menjadi nilai tambah.
+Memiliki kemampuan komunikasi, interpersonal, dan presentasi yang baik.

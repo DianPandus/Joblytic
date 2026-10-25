@@ -14,7 +14,7 @@ from pydantic import BaseModel, Field
 from app.grounding import clean, supported, words
 from app.llm import LLMClient, LLMError
 
-PROMPT_VERSION = "job-extract-v1"
+PROMPT_VERSION = "job-extract-v5"
 MIN_TEXT_CHARS = 80
 MAX_TEXT_CHARS = 20_000
 
@@ -29,17 +29,26 @@ class JobError(Exception):
 
 
 class JobExtraction(BaseModel):
-    position: str | None = Field(description="Nama posisi/jabatan. null jika tidak tertulis.")
+    position: str | None = Field(
+        description="Judul posisi utuh seperti tertulis, termasuk jenjang, divisi, kode, atau "
+        'nama tim/unit di judulnya, juga yang setelah tanda hubung (mis. "Fresh Graduate Data '
+        'Scientist", "Mobile Engineer - Kotlin - Payments"), tanpa ajakan seperti "We are '
+        'hiring". null jika tidak tertulis.'
+    )
     company: str | None = Field(
         description="Nama perusahaan yang merekrut. null jika tidak tertulis (mis. disamarkan)."
     )
     location: str | None = Field(
-        description="Kota/negara penempatan, atau Remote. null jika tidak tertulis."
+        description="Kota/negara penempatan atau Remote, disalin lengkap seperti tertulis "
+        'termasuk provinsi/negaranya (mis. "Bandung, Jawa Barat"). Nama unit bisnis, anak '
+        "perusahaan, atau kantor tempat penempatan bukan lokasi. null jika tidak tertulis."
     )
     required_skills: list[str] = Field(
-        description="Skill wajib: bahasa pemrograman, tools, software, metode, bidang keahlian, "
-        "dan soft skill yang disebut eksplisit. Satu skill per item, singkat (1-4 kata), "
-        "disalin seperti tertulis."
+        description="Skill teknis/keahlian wajib. Dari bagian kualifikasi/persyaratan: semua "
+        "bahasa pemrograman, tools, software, layanan cloud, metode, bahasa (mis. English), "
+        'dan bidang keahlian yang disebut (mis. "manajemen proyek", "analisis regresi"). Dari '
+        "bagian tanggung jawab: hanya tools/teknologi/metode yang disebut namanya. Tanpa soft "
+        "skill. Satu skill per item, singkat (1-4 kata), disalin seperti tertulis."
     )
     preferred_skills: list[str] = Field(
         description="Skill yang ditandai nilai tambah: plus, preferred, nice to have, "
@@ -51,12 +60,17 @@ class JobExtraction(BaseModel):
         "terendah. null jika tidak tertulis."
     )
     education_fields: list[str] = Field(
-        description="Jurusan/bidang studi yang diminta, disalin seperti tertulis. "
-        "Kosongkan jika tidak disebut atau semua jurusan."
+        description="Nama jurusan/bidang studi yang disebut, disalin seperti tertulis. Frasa "
+        'umum seperti "bidang terkait" atau "related field" bukan jurusan. Kosongkan jika '
+        "tidak disebut atau semua jurusan."
     )
     min_experience_years: float | None = Field(
-        description="Pengalaman kerja minimal dalam tahun (6 bulan = 0.5). 0 jika tertulis "
-        "fresh graduate dipersilakan tanpa syarat pengalaman. null jika tidak tertulis."
+        description="Pengalaman kerja minimal dalam tahun (6 bulan = 0.5). Angka tahun yang "
+        "tertulis diutamakan. Tanpa angka tahun: 0 jika fresh graduate/lulusan baru "
+        'dipersilakan, termasuk label kategori seperti "Lulusan Baru" atau "Entry level", walau '
+        "pengalaman disebut sebagai nilai tambah. "
+        "Bila syarat berbeda per jenjang, pakai yang sesuai judul posisi. null jika tidak "
+        "tertulis."
     )
     responsibilities: list[str] = Field(
         description="Tanggung jawab/deskripsi pekerjaan utama, satu butir per item, "
@@ -70,11 +84,32 @@ Aturan:
   dari nama posisi, menerjemahkan, atau menambah apa pun.
 - Field yang tidak tertulis diisi null (atau list kosong).
 - Salin teks dalam bahasa aslinya.
-- Pisahkan skill gabungan menjadi item sendiri ("Python/R" -> "Python", "R";
-  "Excel dan Power BI" -> "Excel", "Power BI").
+- Satu skill per item. Daftar yang dipisah "/", koma, "dan", "atau", "or" selalu dipecah,
+  termasuk yang ada di dalam kurung: "Spring / Hibernate" -> "Spring", "Hibernate";
+  "Queue (RabbitMQ / SQS)" -> "Queue", "RabbitMQ", "SQS"; "Windows/macOS" -> "Windows",
+  "macOS".
+- Kurung hanya tetap menempel bila isinya singkatan dari nama itu sendiri
+  ("Natural Language Processing (NLP)"). Nomor versi ikut namanya ("Python 3").
+- Tulis nama skill-nya saja, tanpa kata sifat atau pengantar ("Fluent Japanese" ->
+  "Japanese"; "Mahir menggunakan Figma" -> "Figma").
+- Skill hanya diambil dari bagian persyaratan/kualifikasi dan tanggung jawab. Paragraf
+  profil perusahaan atau tim ("About us", "About the team", "Tentang kami") dan kalimat
+  pembuka/ajakan bukan persyaratan.
+- Dari bagian kualifikasi, ambil juga bidang keahlian yang disebut, bukan hanya nama tools.
+- Dari bagian tanggung jawab, ambil hanya tools, teknologi, dan metode yang disebut namanya
+  (mis. Terraform, Scrum). Aktivitas kerja ("membuat dokumentasi", "melatih pengguna baru")
+  bukan skill.
+- Soft skill dan sifat pribadi bukan skill: komunikasi, interpersonal, presentasi,
+  problem-solving, analitis, berpikir kritis/kreatif/logis, kepemimpinan, kerja sama tim,
+  koordinasi, integritas, disiplin, jujur, bertanggung jawab, mentoring.
 - Skill yang sama jangan diulang, dan jangan masuk ke required_skills sekaligus
   preferred_skills.
-- Persyaratan umum non-skill (usia, domisili, bersedia ditempatkan, SIM) bukan skill."""
+- Persyaratan umum non-skill (usia, domisili, bersedia ditempatkan, SIM) bukan skill,
+  begitu pula frasa umum seperti "bahasa pemrograman lain" atau "bidang terkait".
+- Abaikan elemen tampilan situs lowongan yang ikut tertempel: bagian "Bagaimana Anda cocok",
+  "Kecocokan berdasarkan riwayat karir Anda", "Keterampilan dan kredensial dari deskripsi
+  pekerjaan", "Show match details", tombol, rating, dan jumlah pelamar. Daftar di bagian itu
+  bukan persyaratan lowongan."""
 
 STRICT_SUFFIX = """
 PENTING: percobaan sebelumnya tidak valid. Keluarkan JSON yang persis mengikuti skema;

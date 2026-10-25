@@ -1,0 +1,27 @@
+Data Analyst - AID
+Astra Financial - Sedaya Multi Investama
+
+  Data and Statistics
+
+  Lulusan Baru & Profesional
+
+ Batas Lamar: 31 Desember 2026
+
+Deskripsi Pekerjaan
+Menganalisis kebutuhan bisnis dari pengguna atau unit bisnis dan menerjemahkannya ke dalam pendekatan analisis data.
+Mengeksplorasi dan menganalisis data untuk mengidentifikasi pola, tren, dan insight utama.
+Menyiapkan, mengelola, dan mengembangkan dataset serta model analisis (data cleaning, transformasi, standardisasi, evaluasi, dan fine-tuning) sesuai dengan kebutuhan pengguna.
+Menyampaikan insight dan rekomendasi kepada unit bisnis dan manajemen untuk mendukung pengambilan keputusan.
+Melaksanakan UAT (User Acceptance Testing), memberikan dukungan pada proses deployment bersama pengguna, serta mendokumentasikan hasil analisis.
+Menganalisis tingkat akurasi model data secara berkala dan melakukan fine-tuning apabila diperlukan.
+Merancang dan menyajikan visualisasi data serta dashboard yang informatif sesuai dengan kebutuhan pengguna.
+Memastikan dokumentasi administrasi tersusun dengan baik serta menyusun standardisasi aturan dan prosedur formal.
+Persyaratan
+Pendidikan minimal S1 di bidang Data Science, Ilmu Komputer, Teknologi Informasi, Matematika, Statistika, atau bidang kuantitatif lain yang relevan.
+Memiliki pemahaman yang kuat mengenai machine learning dan predictive modeling, serta mampu mengembangkan model secara end-to-end, mulai dari persiapan data, feature engineering, pengembangan model, hingga evaluasi.
+Menguasai SQL untuk melakukan ekstraksi, manipulasi, dan analisis data dari berbagai sumber data.
+Memahami konsep Big Data dan data warehouse, serta mampu bekerja dengan dataset berskala besar.
+Mampu melakukan exploratory data analysis (EDA) untuk memahami karakteristik data, mengidentifikasi pola maupun anomali, serta menghasilkan insight yang bermakna.
+Memiliki pemahaman dasar mengenai Artificial Intelligence (AI) atau Generative AI (GenAI) beserta potensi penerapannya untuk meningkatkan analisis data dan produktivitas.
+Memiliki kemampuan berpikir analitis dan pemecahan masalah yang baik, serta mampu menerjemahkan kebutuhan bisnis menjadi pendekatan analitis dan menghasilkan insight yang dapat ditindaklanjuti.
+Memiliki pengalaman dalam membangun visualisasi data atau dashboard menggunakan Power BI, Tableau, atau platform sejenis menjadi nilai tambah.

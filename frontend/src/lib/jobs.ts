@@ -36,6 +36,7 @@ export type JobPosting = {
   prompt_version: string | null;
   corrected_at: string | null;
   created_at: string;
+  updated_at: string;
 };
 
 export function jobTitle(job: Pick<JobPosting, "position" | "company">): string {

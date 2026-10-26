@@ -1,8 +1,12 @@
 """Batas pemakaian harian (PRD 7.10). Hari dihitung dalam WIB, zona waktu pengguna."""
 
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 
 WIB = timezone(timedelta(hours=7))
+
+
+def today_wib() -> date:
+    return datetime.now(WIB).date()
 
 
 def start_of_today_wib() -> str:

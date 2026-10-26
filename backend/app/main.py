@@ -5,11 +5,13 @@ from app.auth import CurrentUser, get_current_profile, get_current_user, require
 from app.config import Settings, get_settings
 from app.cv_api import router as cv_router
 from app.jobs_api import router as jobs_router
+from app.match_api import router as match_router
 from app.supabase import ping_database
 
 app = FastAPI(title="Joblytic API", version="0.1.0")
 app.include_router(cv_router)
 app.include_router(jobs_router)
+app.include_router(match_router)
 
 app.add_middleware(
     CORSMiddleware,

@@ -11,7 +11,15 @@ export const metadata = { title: "Lowongan · Joblytic" };
 type Row = Pick<
   JobPosting,
   "id" | "position" | "company" | "location" | "required_skills" | "corrected_at" | "created_at"
-> & { applications: { id: string }[] };
+> & {
+  applications: { id: string }[];
+  // PostgREST bisa mengembalikan relasi ini sebagai objek atau array.
+  job_matches: { score: number | null } | { score: number | null }[] | null;
+};
+
+function matchScore(job: Row): number | null {
+  return [job.job_matches].flat()[0]?.score ?? null;
+}
 
 export default async function JobsPage() {
   const supabase = await createClient();
@@ -21,7 +29,7 @@ export default async function JobsPage() {
   const { data, error } = await supabase
     .from("job_postings")
     .select(
-      "id, position, company, location, required_skills, corrected_at, created_at, applications(id)",
+      "id, position, company, location, required_skills, corrected_at, created_at, applications(id), job_matches(score)",
     )
     .order("created_at", { ascending: false });
   const jobs = (data ?? []) as Row[];
@@ -52,7 +60,14 @@ export default async function JobsPage() {
             {jobs.map((job) => (
               <li key={job.id}>
                 <Link href={`/jobs/${job.id}`} className="block p-4 hover:bg-background">
-                  <p className="font-medium">{jobTitle(job)}</p>
+                  <div className="flex items-baseline justify-between gap-3">
+                    <p className="font-medium">{jobTitle(job)}</p>
+                    {matchScore(job) !== null && (
+                      <span className="shrink-0 text-sm tabular-nums text-accent">
+                        {matchScore(job)}/100
+                      </span>
+                    )}
+                  </div>
                   <p className="text-sm text-muted">
                     {[
                       job.location,

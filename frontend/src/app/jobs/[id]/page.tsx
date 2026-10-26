@@ -3,8 +3,10 @@ import { notFound, redirect } from "next/navigation";
 import { createApplicationFromJob, deleteJobPosting, updateJobPosting } from "@/app/jobs/actions";
 import { AppHeader } from "@/components/app-header";
 import { JobForm } from "@/components/job-form";
+import { MatchPanel } from "@/components/match-panel";
 import { formatDateTime, stageLabel } from "@/lib/applications";
 import { type JobPosting, educationLabel, formatYears } from "@/lib/jobs";
+import type { MatchResult } from "@/lib/matching";
 import { createClient } from "@/lib/supabase/server";
 
 export const metadata = { title: "Detail lowongan · Joblytic" };
@@ -23,9 +25,10 @@ export default async function JobDetailPage(props: PageProps<"/jobs/[id]">) {
   if (!claimsData?.claims) redirect(`/login?next=/jobs/${id}`);
 
   // RLS: lowongan milik pengguna lain tidak akan ditemukan, jadi tampil 404.
-  const [{ data }, { data: apps }] = await Promise.all([
+  const [{ data }, { data: apps }, { data: matchRow }] = await Promise.all([
     supabase.from("job_postings").select("*").eq("id", id).maybeSingle(),
     supabase.from("applications").select("id, stage").eq("job_posting_id", id).limit(1),
+    supabase.from("job_matches").select("result").eq("job_posting_id", id).maybeSingle(),
   ]);
   if (!data) notFound();
   const job = data as JobPosting;
@@ -95,6 +98,13 @@ export default async function JobDetailPage(props: PageProps<"/jobs/[id]">) {
         </div>
       </section>
 
+      {/* key: koreksi lowongan memasang ulang panel, jadi skornya dihitung lagi. */}
+      <MatchPanel
+        key={job.updated_at}
+        jobId={job.id}
+        initial={(matchRow?.result as MatchResult | undefined) ?? null}
+      />
+
       <section className="flex flex-wrap items-center gap-3">
         {application ? (
           <Link
@@ -110,7 +120,6 @@ export default async function JobDetailPage(props: PageProps<"/jobs/[id]">) {
             </button>
           </form>
         )}
-        <span className="text-sm text-muted">Skor kecocokan dengan profil menyusul di Fase 3.</span>
       </section>
 
       <details className="rounded-lg border border-border p-4" open={!job.corrected_at}>

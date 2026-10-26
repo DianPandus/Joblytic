@@ -117,6 +117,21 @@ async def insert_row(
     return resp.json()[0] if returning else None
 
 
+async def upsert_row(
+    user: "CurrentUser", settings: Settings, table: str, row: dict, on_conflict: str
+) -> None:
+    """Insert, atau timpa baris yang bentrok di kolom unik `on_conflict`."""
+    headers = {**_user_headers(user, settings), "Prefer": "resolution=merge-duplicates"}
+    async with httpx.AsyncClient(timeout=TIMEOUT) as client:
+        resp = await client.post(
+            _rest_url(settings, table),
+            headers=headers,
+            params={"on_conflict": on_conflict},
+            json=row,
+        )
+        resp.raise_for_status()
+
+
 async def ping_database(settings: Settings) -> str:
     """Mengembalikan "ok" atau alasan singkat kegagalan (tanpa membocorkan kunci)."""
     if not settings.supabase_url or not settings.supabase_publishable_key:
